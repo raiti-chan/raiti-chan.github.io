@@ -1,14 +1,40 @@
 <html>
   <head>
-    <title>らいちのホームページ</title>
+    <script src="jquery.min.js" type="text/javascript"></script>
+    <script src="sidemenu.js" type="text/javascript"></script>
+    <link href="maincss.css" rel="stylesheet" type="text/css" media="all" />
+    <title>らいちちゃんのホームページ</title>
+
+    <meta http-equiv="Contrnt-Type" content="text/html; charset=UTF-8"/>
   </head>
 
   <body>
-    まだ何もないよー！<br>
-	
-	<br>やっはろー！らいちちゃんだよー！<br>
-	
-	いえーい！
+    <div id="menu_wrap">
+      <div id="sidemenu">
+        <iframe src="MainMenu.html" style="width: 100%; height: 100%" frameborder=0>
+        </iframe>
+      </div>
+
+      <div id="sidemenu_key">→</div>
+
+      <div class="clear"></div>
+    </div>
+
+    <div id="contents">
+      <iframe src="MainPage.html" name="main" style="width: 100%; height: 100%;" frameborder=0>
+      </iframe>
+    </div>
   </body>
+
+<!--
+  <frameset cols="20%,*" frameborder=0>
+    <frame src="MainMenu.html" name="menu">
+    <frame src="MainPage.html" name="main">
+    </frameset>
+  <noframes>
+    このページはフレーム対応のブラウザでご覧ください。
+  </noframes>
+</frameset>
+-->
 
 </html>
