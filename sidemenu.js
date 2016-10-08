@@ -32,17 +32,44 @@ var speed = 400
 //▼ボタンをクリックしたらメニューが開いたり閉じたりする処理
 $(sidemenKey).click(function(){
     if($(menuWrap).hasClass('active')){
-		//activeのクラスを持っていたら
-		//menuを閉じる(アニメーションの速さは300)＆activeを取る
 		$(menuWrap).stop().animate({left:'-'+menuWidth+'px'},speed).removeClass('active');
-		//ボタンの文言を変更
-		$(sidemenKey).html(closeHtml);
+
+		$('#sidemenu_key_bar1').animate({zIndex:1},{
+			duration:speed,
+			step:function(now){
+				$('#sidemenu_key_bar1').css({transform:'rotate(' + (45 - now * 45) + 'deg)'});
+				$('#sidemenu_key_bar1').css({'margin-top':20-(now*10)+'px'});
+				$('#sidemenu_key_bar3').css({transform:'rotate(' + (-45 + now * 45) + 'deg)'});
+				$('#sidemenu_key_bar3').css({'margin-top':(-15)+(now*20)+'px'});
+				if(now >= 0.5){
+					$('#sidemenu_key_bar2').css({'background-color':'rgba(255,255,255,1)'});
+				}
+			},
+			complete:function(){
+				$('#sidemenu_key_bar1').css('zIndex', 0);
+			}
+		})
+		
 	}else{
-		//activeのクラスを持っていなければ
-		//menuを開く＆activeを付与
 		$(menuWrap).stop().animate({left:'0'},speed).addClass('active');
-		//ボタンの文言を変更
-		$(sidemenKey).html(openHtml);
+
+		$('#sidemenu_key_bar1').animate({zIndex:1},{
+			duration:speed,
+			step:function(now){
+				$('#sidemenu_key_bar1').css({transform:'rotate(' + (now * 45) + 'deg)'});
+				$('#sidemenu_key_bar1').css({'margin-top':10+(now*10)+'px'});
+				$('#sidemenu_key_bar3').css({transform:'rotate(' + (180 - now * 45) + 'deg)'});
+				$('#sidemenu_key_bar3').css({'margin-top':5-(now*20)+'px'});
+				if(now >= 0.5){
+					$('#sidemenu_key_bar2').css({'background-color':'rgba(255,255,255,0)'});
+				}
+			},
+			complete:function(){
+				$('#sidemenu_key_bar1').css('zIndex', 0);
+			}
+		})
+
+		
 	};
 });
 
