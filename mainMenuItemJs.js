@@ -1,7 +1,7 @@
 $(function(){
 	
 	$('.menuItem').click(function(){
-		$(this).toggleClass("cliced");
+		parent.main.location = jQuery(this).attr('data-url');	
 	})
 
 })
