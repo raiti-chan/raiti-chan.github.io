@@ -8,16 +8,18 @@ main{
 	background: rgba(190, 255, 255, 0.65);
 	margin-top: 50px;
 	margin-left: 50px;
-	margin-right: 100px;
+	margin-right: 50px;
 	margin-bottom: 100px;
 	padding-top: 30px;
-	padding-left: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
 	padding-bottom: 30px;
 	border: ridge 5px;
 	border-radius: 50px;
 	text-align: center;
 	line-height: 1.4;
 	overflow:hidden;
+	display: none;
 }
 
 img{
@@ -26,3 +28,32 @@ img{
 	height: auto;
 }
 
+.drop{
+	overflow:hidden;
+	float: left;
+	height:  100px;
+	border: outset 2px;
+	border-color: #AAA;
+	background-color: rgba(255, 255, 255, 0.75);
+}
+
+.droptitle{
+	padding: 10px;
+	line-height: 80px;
+	font-size: 50px;
+	background-color: rgba(255, 255, 255, 0);
+	transition-duration: 0.5s;
+	transition-timing-function: ease;
+	border-bottom: outset 2px #AAA;
+}
+
+.droptitle:hover{
+	background-color: rgba(255, 185, 100, 0.75);
+}
+
+.dropcontents{
+	overflow:auto;
+	padding: 10px;
+	padding-top: 0px;
+	height: auto;
+}
