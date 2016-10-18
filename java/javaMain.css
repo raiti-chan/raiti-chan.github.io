@@ -6,8 +6,8 @@ body{
 
 main{
 	background: rgba(190, 255, 255, 0.65);
-	margin-top: 100px;
-	margin-left: 100px;
+	margin-top: 50px;
+	margin-left: 50px;
 	margin-right: 100px;
 	margin-bottom: 100px;
 	padding-top: 30px;
@@ -17,9 +17,12 @@ main{
 	border-radius: 50px;
 	text-align: center;
 	line-height: 1.4;
+	overflow:hidden;
 }
 
 img{
 	margin:20px;
+	max-width: 90%;
+	height: auto;
 }
 

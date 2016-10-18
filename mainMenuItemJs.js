@@ -1,7 +1,7 @@
 $(function(){
 	
 	$('.menuItem').click(function(){
-		parent.main.location = jQuery(this).attr('data-url');	
+		parent.main.location = jQuery(this).attr('data-url');
 	})
 
 })
