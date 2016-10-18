@@ -10,6 +10,7 @@ $(function(){
 		titlenode.classList.add("droptitle");
 		node.insertBefore(titlenode,node.firstChild);
 		$(node).css("width",node.getAttribute("mixW"));
+		$(node).css("height",$(node).innerHeight-$(contentnode).innerHeight());
 		$(titlenode).hover(function(){
 			$(node).animate({width: "100%"},500);
 		},function(){
@@ -33,7 +34,6 @@ $(function(){
 			}
 		});
 	}
-
 })
 
 window.onload = function() {

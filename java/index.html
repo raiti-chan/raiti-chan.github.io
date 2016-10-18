@@ -2,6 +2,15 @@
 
 	<header>
 		<link href="../maincss.css" rel="stylesheet" type="text/css" media="all" />
+		<style type="text/css">
+			.dropSimple{
+				background:#FFFFFF;
+				color:#2255FF;
+			}
+			.dropSimple:hover{
+				background:#AAAAAA;
+			}
+		</style>
 		<title>らいちたそのJava解説!!</title>
 	</header>
 
@@ -16,8 +25,23 @@
 			まあ、少しづつ見た目も変えていくよ。<br>
 			
 			<h4>目次</h4>
-			<a href="AboutJava/AboutJava.html">第0章 Javaについて--開発を始めるために</a><br><br>
-			<a href="HelloWorld/HelloWorld.html">第1章 Javaプログラムを書いてみよう</a><br><br>
+			<div  class="dropSimple" onclick="obj=document.getElementById('open0').style; obj.display=(obj.display=='none')?'block':'none';">
+				<a style="cursor:pointer;">第0章 Javaについて --開発を始めるために </a>
+			</div>
+			<div id="open0" style="display:none;clear:both;">
+				　<a href="AboutJava/AboutJava.html">・第0章 1部 Javaについて--開発を始めるために</a>
+			</div>
+			<br>
+
+			<div  class="dropSimple" onclick="obj=document.getElementById('open1').style; obj.display=(obj.display=='none')?'block':'none';">
+				<a style="cursor:pointer;">第1章 Javaの基本 </a>
+			</div>
+			<div id="open1" style="display:none;clear:both;">
+			　<a href="1/HelloWorld.html">・第1章 1部 基本の'き' HelloWorld</a>
+			</div>
+			<br>
+
+
 		</div>
 
 	</body>
