@@ -4,6 +4,16 @@
 		<link href="../javaMain.css" rel="stylesheet" type="text/css" media="all" />
 		<script src="../../jquery.min.js" type="text/javascript"></script>
     	<script src="../javMain.js" type="text/javascript"></script>
+
+		<script type="text/javascript" src="../SyntaxHighlighter/scripts/shCore.js"></script>
+		<script type="text/javascript" src="../SyntaxHighlighter/scripts/shBrushJava.js"></script>
+		<link type="text/css" rel="stylesheet" href="../SyntaxHighlighter/styles/shCore.css"/>
+		<link type="text/css" rel="stylesheet" href="../SyntaxHighlighter/styles/shThemeRDark.css"/>
+		<script type="text/javascript">
+			SyntaxHighlighter.config.clipboardSwf = 'scripts/clipboard.swf';
+			SyntaxHighlighter.all();
+		</script>
+		
 		<title>Javaプログラムを書いてみよう</title>
 	</head>
 	<body>
@@ -82,10 +92,50 @@
 
 				</div>
 			</div>
-			<br>
+			<br><br>
 			で、コンパイルは完了です。<br>
 			じゃ、実行してみましょう！<br>
-			
+			実行方法は、<br>
+			<b>java HelloWorld</b><br>
+			です<br>
+			<img src="img/3.png" alt="HelloWorld"><br>
+			こんなかんじでHelloWorldと表示されました！！<br>
+			それだけかって？<br>
+			それだけです。<br>
+			まあ、いいじゃないですか。あなたの書いたプログラムが動いたんですよ！！<br>
+			え？意味を知りたい？<br>
+			えーと<br>
+			<br>
+			<pre class="brush: java;">
+				public class HelloWorld{
+					/*...*/
+				}
+			</pre>
+			<br>
+			ってところでクラスを定義しています。<br>
+			そして<br>
+			<br>
+			<pre class="brush: java;">
+				public static void main(String[] args){
+					/*...*/
+				}
+			</pre>
+			<br>
+			ってところで、メインメソッドを定義しています。<br>
+			そして画面に出力してるのは、<br>
+			<br>
+			<pre class="brush: java;">
+				System.out.println("HelloWorld");
+			</pre>
+			<br>
+			です。<br>
+			これは<b>System</b>というクラスオブジェクトの中の<b>out</b>というインスタンスの<b>println</b>ってメソッドに、<br>
+			引数<b>new String("HelloWorld")</b>を渡して、メソッドを実行してるんだよ。<br>
+			さっぱりだよね。<br>
+			まあ、その辺も、この解説を見ていけばわかるから安心して！！<br>
+			ってことで第一部はここまで！！<br>
+			またね！！<br>
+			<a href="../index.html" style="text-align: center; font-size:35px">Java解説トップ</a><br>
 		</main>
 	</body>
 </html>

@@ -30,7 +30,6 @@ img{
 
 .drop{
 	overflow:hidden;
-	float: left;
 	height:  100px;
 	border: outset 2px;
 	border-color: #AAA;
