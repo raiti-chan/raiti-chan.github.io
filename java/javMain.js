@@ -38,7 +38,7 @@ $(function(){
 
 window.onload = function() {
 	var main_hight = $("main").height();
-	
+
 	//-----------------------------------------------------------------------------表示
 	$("main").css("display","inline");
 	$("main").css("height",0);
