@@ -108,6 +108,7 @@ a = 10;</pre>
 			</pre>
 			もう、言わなくてもわかりますよね。<br>
 			表示されるのは 255 です。<br>
+			あともちろん -14 とかにすれば、マイナスの値になりますよ。<br>
 			<br>
 			なんとなくイメージついたかな？<br>
 			じゃあ次、文字を変数に入れましょう。<br>
@@ -144,21 +145,90 @@ a = 10;</pre>
 			型にはすべてに名前があります。<br>
 			その名前を指定して変数を宣言するのです。<br>
 			では、型は何があるのか、表にまとめました。<br>
-			<table border="1">
-				<tr><th>型名</th><th>種類</th><th>表記例</th><th>詳細</th></tr>
-				<tr><td>byte</td><td>1バイト符号付整数</td><td>byte a = 10;</td><td>-128～127の間の整数</td></tr>
-				<tr><td>short</td><td>2バイト符号付整数</td><td>short a = 1000;</td><td>-32768～32767の間の整数</td></tr>
-				<tr><td>int</td><td>ビット符号付整数</td><td>int a = 186;</td><td>-1247483648～1247483647の間の整数</td></tr>
-				<tr><td>long</td><td>64ビット符号付整数</td><td>long a = 1000000000L;</td><td>-9223372036854775808～9223372036854775807の間の整数</td></tr>
-				<tr><td>float</td><td> 32ビット浮動小数点数</td><td>float a = 10.15F;</td><td>負の値は -3.4028235E+38 ～ -1.401298E-45、正の値は 1.401298E-45 ～ 3.4028235E+38 の範囲。少しアバウト</td></tr>
-				<tr><td>long</td><td>64ビット倍精度浮動小数点数</td><td>long a = 10.0115L;</td><td>負の値は -1.79769313486231570E+308 ～ -4.94065645841246544E-324、<br>正の値は 4.94065645841246544E-324 ～ 1.79769313486231570E+308 の範囲。floatよりも正確</td></tr>
-				
-			</table>
-
+			<table border="1" title="プリミティブ型変数型名">
+				<caption>プリミティブ型変数一覧</caption>
+				<tr><th>型名</th><th>種類</th><th>大きさ[bit]</th><th>表記例</th><th>詳細</th><th>ラッパークラス</th></tr>
+				<tr><td>byte</td><td>8ビット符号付整数</td><td>8bit</td><td>byte a = 10;</td><td>-128～127の間の整数</td><td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Byte.html" target="_blank">java.lang.Byte</a></td></tr>
+				<tr><td>short</td><td>16ビット符号付整数</td><td>16bit</td><td>short a = 1000;</td><td>-32768～32767の間の整数</td><td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Short.html" target="_blank">java.lang.Short</a></td></tr>
+				<tr><td>int</td><td>32ビット符号付整数</td><td>32bit</td><td>int a = 186;</td><td>-1247483648～1247483647の間の整数</td><td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Integer.html" target="_blank">java.lang.Integer</a></td></tr>
+				<tr><td>long</td><td>64ビット符号付整数</td><td>64bit</td><td>long a = 1000000000L;</td><td>-9223372036854775808～9223372036854775807の間の整数</td><td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Long.html" target="_blank">java.lang.Long</a></td></tr>
+				<tr><td>float</td><td> 32ビット浮動小数点数</td><td>32bit</td><td>float a = 10.15F;</td><td>負の値は -3.4028235E+38 ～ -1.401298E-45、正の値は 1.401298E-45 ～ 3.4028235E+38 の範囲。少しアバウト</td><td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Float.html" target="_blank">java.lang.Float</a></td></tr>
+				<tr><td>double</td><td>64ビット倍精度浮動小数点数</td><td>64bit</td><td>double a = 10.0115D;</td><td>負の値は -1.79769313486231570E+308 ～ -4.94065645841246544E-324、<br>正の値は 4.94065645841246544E-324 ～ 1.79769313486231570E+308 の範囲。floatよりも正確</td><td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Double.html" target="_blank">java.lang.Double</a></td></tr>
+				<tr><td>boolean</td><td>論理型 true または false</td><td>1bit</td><td>boolean a = true; または boolean a = false;</td><td>正しい(true)か偽り(false)のみ</td><td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Boolean.html" target="_blank">java.lang.Boolean</a></td></tr>
+				<tr><td>char</td><td>文字 16ビット符号なし(Unicode)文字</td><td>16bit</td><td>char a = 'A';</td><td>Unicode文字1文字。</td><td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Character.html" target="_blank">java.lang.Character</a></td></tr>
+				<tr><td>void</td><td>型無し</td><td>0bit</td><td>代入不可</td><td>戻り値が無いことを意味する</td><td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Void.html" target="_blank">java.lang.Void</a></td></tr>
+			</table><br>
+			以上です。<br>
+			え、さっきのStringはどこ行ったのかって？<br>
+			あのこは特別なんです。<br>
+			何が特別なのかはまた今度解説します。<br>
+			まあ、別枠なので、上の表には含めませんでしたが下に書いておきますか。<br>
+			<table border="1"  title="参照値型変数変数(String)">
+				<caption>参照値型変数(String)</caption>
+				<tr><th>型名</th><th>種類</th><th>大きさ[bit]</th><th>表記例</th><th>詳細</th><th>クラス</th></tr>
+				<tr><td>String</td><td>文字列</td><td>大きさに決まり無し</td><td>String a = "文字列";</td><td>文字列</td><td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/String.html" target="_blank">java.lang.String</a></td></tr>
+			</table><br>
+			さあ、よくわからない単語がいくつか出てきましたね。<br>
+			まず<font color="#FF5555"><b><u>プリミティブ型変数</u></b></font>とは何か、からですね。<br>
+			プリミティブ型変数とは、intなどの変数を総省するのですが、<br>
+			今は、どんなもの、ってことはいいです。<br>
+			後で、クラスについて解説するときにまた合わせて説明するので。<br>
+			とりあえず、プリミティブ型変数というのがあって、表の中のものはプリミティブ型変数ということを頭に入れておいてください。<br>
+			で、下の、<font color="#FF5555" ><b><u>参照値型変数</u></b></font>とは何か。<br>
+			これもクラスについて解説するときに合わせて説明します。<br>
+			これも、今はこういうのがあるということだけ頭に(ry<br>
+			で、ほかにも、ビットだとか、ラッパークラスだとかありますが、これも今はスルーで。<br>
+			ビットについては、このページの下に入れておきます。<br>
+			ビットについて知るにはまず2進数についての理解が必要ですが...まあ、そこらへんも含めて解説します。<br>
+			で、<font color="#FF5555">void</font>についても、また別の機会に(メソッドについての時にね)<br>
+			void君だけは、型であって型でない不思議な子なんです。<br>
+			<br>
+			<div style="background: linear-gradient(270deg,rgba(250, 250, 250, 0) ,rgba(250, 250, 0, 0.75) ,rgba(250, 250, 0, 0)); line-height: 50px; height:70px; margin-top: 21px; padding-top: 15px;">
+				<h1 id="j1" style="margin-top: 0px;margin-right: 100px; margin-left: 100px; border-left: 5px solid #F0D000; text-align: left; text-indent: 50pt">リテラルについて</h1>
+			</div>
+			ソースコードに直接記載されてる値( 10 , 334L , 15.5F , 1.41421356D , true , false , '雷' , "あぁ^～心がぴょんぴょんするんじゃぁ^～" など)です。<br>
+			これらの値を総称して、リテラルと言います。<br>
+			ただし、リテラルは後ろにつくLや、D、前後に付く'や"も含みます。<br>
+			それらの文字などは、リテラルのデータ型を決めるものです。<br>
+			どの表記でどのデータ型のリテラルになるのかをまとめてみました。<br>
+			<table>
+				<caption>代表的なリテラル一覧</caption>
+				<tr><th>リテラルの種類</th><th>表記例</th><th>変数型</th><th>コード例</th></tr>
+				<tr><td>整数</td><td>334</td><td>int</td><td>int a = 334;</td></tr>
+				<tr><td>大きい整数。末尾がL(l)</td><td>5548789L</td><td>long</td><td>long a = 5548789L;</td></tr>
+				<tr><td>小数点付き数値(制度は低め)末尾がF(f)</td><td>15.548F</td><td>float</td><td>float a = 15.548F</td></tr>
+				<tr><td>小数点付き数値(制度の高い少数)末尾はD(d) もしくは無し</td><td>3.14159D もしくは 3.14159</td><td>double</td><td>double a = 3.14159;</td></tr>
+				<tr><td>true(真)またはfalse(偽)</td><td>true もしくは false</td><td>boolean</td><td>boolean a = true;</td></tr>
+				<tr><td>引用符(シングルクオーテーション ' )で囲まれた文字</td><td>'雷'</td><td>char</td><td>char a = '雷';</td></tr>
+				<tr><td>二重引用符(ダブルクオーテーション ")で囲まれた文字列</td><td>"あぁ^～心がぴょんぴょんするんじゃぁ^～"</td><td>String</td><td>String a = "あぁ^～心がぴょんぴょんするんじゃぁ^～";</td></tr>
+			</table><br>
+			ですね。<br>
+			特にchreに二重引用符を使ったりして(コンパイル)エラーになることが多いので気を付けてください<br>
+			あと、byteやshort用のリテラルの種類は存在しません。<br>
+			byteやshort等はそのままint用のリテラルが使用可能です。<br>
+			まぁ、結論から言うと<br>
+			<font color="#FF5555">1 と 1L と 1.0F と 1.0 と '1' と "1" は全くの別物ってことです。</font><br>
+			<div class="column">
+				<h1 class="h2">コラム:整数リテラルの応用記法</h1><br>
+				整数リテラルの先頭に <b>0x</b>をつけると16進数。<br>
+				<b>0</b>をつけると8進数<br>
+				<b>0b</b>をつけると2進数表記として解釈されるよ。<br>
+				つまり<br>
+				<pre class="brush: java;">
+					int a = 0xFFFF; //--aの値は65535
+					int b = 077; //--bの値は63
+					int c = 0b1101; //--cの値は13
+				</pre>
+				となります。
+			また、数値リテラルの中にアンダースコア記号(_)を入れることができます。<br>
+			int a = 1_158_140;<br>
+			日常で1,158,140円みたいにカンマを入れる感じでつけてあげると大きな数値でもわかりやすくなったりします。<br>
+			</div>
 			<br>
 			<br>
 			<hr>
-			<a href="../index.html" style="text-align: center; font-size:35px; text-align: center;">Java解説トップ</a><br>
+			<a href="../index.html" style="text-align: center; font-size:35px; text-align: center;">Java解説トップ</a>
+			
 		</main>
 	</body>
 
