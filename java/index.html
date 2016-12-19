@@ -1,50 +1,53 @@
 <html>
+<header>
+	<link href="../mainCss.css" rel="stylesheet" type="text/css" media="all"/>
+	<title>らいちたそのJava解説!!</title>
+</header>
 
-	<header>
-		<link href="../maincss.css" rel="stylesheet" type="text/css" media="all" />
-		<style type="text/css">
-			.dropSimple{
-				background:#FFFFFF;
-				color:#2255FF;
-			}
-			.dropSimple:hover{
-				background:#AAAAAA;
-			}
-		</style>
-		<title>らいちたそのJava解説!!</title>
-	</header>
+<body style=>
+<div id="header">
+	<div id="title">らいちたそのJava解説!!</div>
+</div>
+<div id="body">
+	<h3>ここでは、らいちたそがJavaについて解説していくよ!!</h3>
+	え？なんか見た目がしょぼいって？<br>
+	んー、いそいで作ってるから仕方がないかな？<br>
+	まあ、少しづつ見た目も変えていくよ。<br>
 
-	<body style=>
-		<div id="header">
-			<div id="title">らいちたそのJava解説!!</div>
-		</div>
-		<div id="body">
-			<h3>ここでは、らいちたそがJavaについて解説していくよ!!</h3>
-			え？なんか見た目がしょぼいって？<br>
-			んー、いそいで作ってるから仕方がないかな？<br>
-			まあ、少しづつ見た目も変えていくよ。<br>
-			
-			<h4>目次</h4>
-			<div  class="dropSimple" onclick="obj=document.getElementById('open0').style; obj.display=(obj.display=='none')?'block':'none';">
-				<a style="cursor:pointer;">第0章 Javaについて --開発を始めるために </a>
-			</div>
-			<div id="open0" style="display:none;clear:both; font-size:20px;padding-left: 15px"><br>
-				　<a href="AboutJava/AboutJava.html">・第0章 1部 Javaについて--開発を始めるために</a>
-			</div>
-			<br>
+	<h4>目次</h4>
+	<div class="dropSimple"
+		 onclick="obj=document.getElementById('open0').style; obj.display=(obj.display=='none')?'block':'none';">
+		<a>第0章 Javaについて --開発を始めるために </a>
+	</div>
+	<div id="open0" class="dropBlock"><br>
+		<a href="0/AboutJava.html">・1部 Javaについて--開発を始めるために</a>
+		<a href="0/AboutJava.html#j2">・2部 JDKのインストール</a>
+		<a href="0/AboutJava.html#j3">・3部 IDEAのインストール</a>
+	</div>
+	<br>
 
-			<div  class="dropSimple" onclick="obj=document.getElementById('open1').style; obj.display=(obj.display=='none')?'block':'none';">
-				<a style="cursor:pointer;">第1章 Javaの基本 </a>
-			</div>
-			<div id="open1" style="display:none;clear:both; font-size:20px; padding-left: 15px;"><br>
-			　<a href="1/HelloWorld.html">・第1章 1部 基本の'き' HelloWorld</a><br><br>
-			　<a href="1/2.html">・第1章 2部 変数とは</a><br>
-			</div>
-			<br>
+	<div class="dropSimple"
+		 onclick="obj=document.getElementById('open1').style; obj.display=(obj.display=='none')?'block':'none';">
+		<a>第1章 Javaの基本 </a>
+	</div>
+	<div id="open1" class="dropBlock"><br>
+		<a href="1/1.html">・1部 基本の'き' HelloWorld</a><br><br>
+		<a href="1/2.html">・2部 変数とは</a><br>
+		<a href="1/2.html#j2">・2.2部 リテラルについて</a>
+		<a href="1/2.html#j3">・2.3部 コラム:リテラルの応用記法</a>
+	</div>
+	<br>
+	<br>
+	<div class="dropSimple"
+		 onclick="obj=document.getElementById('columnOpen').style; obj.display=(obj.display=='none')?'block':'none';">
+		<a>コラム</a>
+	</div>
+	<div id="columnOpen" class="dropBlock"><br>
+		<a href="1/2.html#j3">リテラルの応用記法</a>
+	</div>
+	<br>
+</div>
 
-
-		</div>
-
-	</body>
+</body>
 
 </html>

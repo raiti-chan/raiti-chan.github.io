@@ -1,49 +1,56 @@
 <html>
-	<head>
-		<link href="../../maincss.css" rel="stylesheet" type="text/css" media="all" />
-		<link href="../javaMain.css" rel="stylesheet" type="text/css" media="all" />
-		<script src="../../jquery.min.js" type="text/javascript"></script>
-    	<script src="../javMain.js" type="text/javascript"></script>
+<head>
+	<link href="../../mainCss.css" rel="stylesheet" type="text/css" media="all"/>
+	<link href="../javaMain.css" rel="stylesheet" type="text/css" media="all"/>
+	<script src="../../lib/jquery.min.js" type="text/javascript"></script>
+	<script src="../javMain.js" type="text/javascript"></script>
 
-		<script type="text/javascript" src="../SyntaxHighlighter/scripts/shCore.js"></script>
-		<script type="text/javascript" src="../SyntaxHighlighter/scripts/shBrushJava.js"></script>
-		<link type="text/css" rel="stylesheet" href="../SyntaxHighlighter/styles/shCore.css"/>
-		<link type="text/css" rel="stylesheet" href="../SyntaxHighlighter/styles/shThemeRDark.css"/>
-		<script type="text/javascript">
-			SyntaxHighlighter.config.clipboardSwf = 'scripts/clipboard.swf';
-			SyntaxHighlighter.all();
-		</script>
-		
-		<title>変数とは</title>
-	</head>
+	<script type="text/javascript" src="../../lib/SyntaxHighlighter/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../../lib/SyntaxHighlighter/scripts/shBrushJava.js"></script>
+	<link type="text/css" rel="stylesheet" href="../../lib/SyntaxHighlighter/styles/shCore.css"/>
+	<link type="text/css" rel="stylesheet" href="../../lib/SyntaxHighlighter/styles/shThemeRDark.css"/>
+	<script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = 'scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
 
-	<body>
-		<main>
-			<a href="../index.html" style="text-align: center; font-size:35px; text-align: center;">Java解説トップ</a><br>
-			<hr>
-			<br>
-			<br>
-			<div style="background: linear-gradient(270deg,rgba(250, 250, 250, 0) ,rgba(250, 250, 0, 0.75) ,rgba(250, 250, 0, 0)); line-height: 50px; height:70px; margin-top: 21px; padding-top: 15px;">
-				<h1 id="j1" style="margin-top: 0px;margin-right: 100px; margin-left: 100px; border-left: 5px solid #F0D000; text-align: left; text-indent: 50pt">第1章 2部 変数とは</h1>
-			</div>
-			<br><br>
-			Javaだけでなく、すべてのプログラム言語には、変数というものが存在します。<br>
-			いや、存在しない言語は、あるにはあります。<br>
-			それは、まあ、僕が今作ってるこのページ、HTMLですが、HTMLをプログラム言語といっていいのかわかりませんし。<br>
-			<span style="color:#999;">(HTMLはマークアップ言語ですね、はい。)</span><br>
-			ちなみにらいちたそはHTMLやJavaScriptは苦手です。<br>
-			あ、JavaScriptとJavaを一緒にしないでくださいね。<br>
-			で、その変数なんですが、まあ変数ってのは、値を一時的に格納する物って考えてください。<br>
-			えっと、なんて言おうか、まぁ、先にコードを見てください<br>
-			<pre class="fixcode">
-<span style="color:FF5555">int</span> a ;
+	<title>変数とは</title>
+</head>
+
+<body>
+<main>
+	<a href="../index.html" style="text-align: center; font-size:35px; text-align: center;">Java解説トップ</a><br>
+	<hr>
+	<br>
+	<br>
+	<a href="#j1">・第1章 2部 変数とは</a><br>
+	<a href="#j2">・リテラルについて</a><br>
+	<a href="#j3">・コラム:リテラルの応用記法</a>
+	<br>
+	<div style="background: linear-gradient(270deg,rgba(250, 250, 250, 0) ,rgba(250, 250, 0, 0.75) ,rgba(250, 250, 0, 0)); line-height: 50px; height:70px; margin-top: 21px; padding-top: 15px;">
+		<h1 id="j1"
+			style="margin-top: 0;margin-right: 100px; margin-left: 100px; border-left: 5px solid #F0D000; text-align: left; text-indent: 50pt">
+			第1章 2部 変数とは</h1>
+	</div>
+	<br><br>
+	Javaだけでなく、すべてのプログラム言語には、変数というものが存在します。<br>
+	いや、存在しない言語は、あるにはあります。<br>
+	それは、まあ、僕が今作ってるこのページ、HTMLですが、HTMLをプログラム言語といっていいのかわかりませんし。<br>
+	<span style="color:#999;">(HTMLはマークアップ言語ですね、はい。)</span><br>
+	ちなみにらいちたそはHTMLやJavaScriptは苦手です。<br>
+	あ、JavaScriptとJavaを一緒にしないでくださいね。<br>
+	で、その変数なんですが、まあ変数ってのは、値を一時的に格納する物って考えてください。<br>
+	えっと、なんて言おうか、まぁ、先にコードを見てください<br>
+	<pre class="fixcode">
+<span style="color:#FF5555">int</span> a ;
 a = 10 ;</pre>
-			まぁ。簡単ですね。<br>
-			で、この文の意味は、<span style="color:#FF5555">int</span> 型の、<b>a</b> という名前の付いた、変数を<u style="color:#FF1111"><b>用意し、</b></u><br>
-			その中に10を入れている。<br>
-			ってことです。<br>
-			試しに次のコードを実行してみましょう。<br>
-			<pre class="brush: java;">
+	まぁ。簡単ですね。<br>
+	で、この文の意味は、<span style="color:#FF5555">int</span> 型の、<b>a</b> という名前の付いた、変数を<u
+		style="color:#FF1111"><b>用意し、</b></u><br>
+	その中に10を入れている。<br>
+	ってことです。<br>
+	試しに次のコードを実行してみましょう。<br>
+	<pre class="brush: java;">
 				public class Test1_2_1{
 					public static void main(String [] args){
 						int a;
@@ -51,53 +58,56 @@ a = 10 ;</pre>
 						System.out.println(a);
 					}
 				}
-			</pre><br>
-			あ、一つ大事なことをいうのを忘れてました。<br>
-			クラス宣言で宣言したクラス名とファイル名を同じにしなくてはいけません。<br>
-			つまり、<br>
-			<pre class="mheader">
+			</pre>
+	<br>
+	あ、一つ大事なことをいうのを忘れてました。<br>
+	クラス宣言で宣言したクラス名とファイル名を同じにしなくてはいけません。<br>
+	つまり、<br>
+	<pre class="mheader">
 public class Test1_2_1{
 	/* ... */
 }
 			</pre>
-			<pre class="mexplain">
+	<pre class="mexplain">
 この場合、Test1_2_1.java というファイル名にしなくてはいけないんです。
 もっと言えば、<font color="#FF2222">Class Example だった場合ファイル名を Example.javaにしないといけないんです。</font>
-			</pre><br>
-			<h2 style="color: #FF2222;">これはJava界における絶対のルールなんです。</h2>
-			<br>
-			ですので、守ってください。<br>
-			<font color="#999">本当は例外がありますが、それはクラスについての解説の時に</font><br>
-			では、コンパイルして、実行してみてください。<br>
-			実行コードは、コマンドプロンプトで<br>
-			<pre class="mheader"><font color="#AA5555"> javac Test1_2_1.java <br>
-java Test1_2_1</font></pre><br>
-			この二つのコマンドですね。<br>
-			さぁ、なんと表示されたでしょうか。<br>
-			どこも間違ってなければ<font size="15px">10</font>と表示されたはずです。<br>
-			さぁ、察しが良い方はもう気づいていると思いますが、確認のため、10を好きな整数に書き換えてみてください。<br>
-			入力された数字が表示されるはずです。<br>
-			そうです。これが変数です<br>
-			ん？よくわからない？<br>
-			そんな方のために例を用意してあります。<br>
-			<img src="img/1_1_1.png" alt="変数のイメージ"><br>
-			まぁ、何も言わないでわかりますよね。<br>
-			箱に数字を入れているだけです。<br>
-			<font size="20px">変数は箱です！！</font><br>
-			で、変数はこんな書き方もできます<br>
-			<pre class="fixcode">
-<span style="color:FF5555">int</span> a  = 10;
+			</pre>
+	<br>
+	<h2 style="color: #FF2222;">これはJava界における絶対のルールなんです。</h2>
+	<br>
+	ですので、守ってください。<br>
+	<font color="#999">本当は例外がありますが、それはクラスについての解説の時に</font><br>
+	では、コンパイルして、実行してみてください。<br>
+	実行コードは、コマンドプロンプトで<br>
+	<pre class="mheader"><font color="#AA5555"> javac Test1_2_1.java <br>
+java Test1_2_1</font></pre>
+	<br>
+	この二つのコマンドですね。<br>
+	さぁ、なんと表示されたでしょうか。<br>
+	どこも間違ってなければ<font size="15px">10</font>と表示されたはずです。<br>
+	さぁ、察しが良い方はもう気づいていると思いますが、確認のため、10を好きな整数に書き換えてみてください。<br>
+	入力された数字が表示されるはずです。<br>
+	そうです。これが変数です<br>
+	ん？よくわからない？<br>
+	そんな方のために例を用意してあります。<br>
+	<img src="img/1_1_1.png" alt="変数のイメージ"><br>
+	まぁ、何も言わないでわかりますよね。<br>
+	箱に数字を入れているだけです。<br>
+	<font size="20px">変数は箱です！！</font><br>
+	で、変数はこんな書き方もできます<br>
+	<pre class="fixcode">
+<span style="color:#FF5555">int</span> a  = 10;
 </pre>
-			<br>
-			まあ、多分わかるでしょう。<br>
-			aという名前の付いた変数に10という数字を入れて用意するんです。<br>
-			つまり<br>
-			<pre class="fixcode">
+	<br>
+	まあ、多分わかるでしょう。<br>
+	aという名前の付いた変数に10という数字を入れて用意するんです。<br>
+	つまり<br>
+	<pre class="fixcode">
 <font color="#FF5555">int</font> a;
 a = 10;</pre>
-			を1行に納めただけなんです。<br>
-			つぎ、<br>
-			<pre class="brush: java;">
+	を1行に納めただけなんです。<br>
+	つぎ、<br>
+	<pre class="brush: java;">
 				public class Test1_2_2 {
 					public static void main(String [] args){
 						int a = 10;
@@ -106,13 +116,13 @@ a = 10;</pre>
 					}
 				}
 			</pre>
-			もう、言わなくてもわかりますよね。<br>
-			表示されるのは 255 です。<br>
-			あともちろん -14 とかにすれば、マイナスの値になりますよ。<br>
-			<br>
-			なんとなくイメージついたかな？<br>
-			じゃあ次、文字を変数に入れましょう。<br>
-			<pre class="brush: java;">
+	もう、言わなくてもわかりますよね。<br>
+	表示されるのは 255 です。<br>
+	あともちろん -14 とかにすれば、マイナスの値になりますよ。<br>
+	<br>
+	なんとなくイメージついたかな？<br>
+	じゃあ次、文字を変数に入れましょう。<br>
+	<pre class="brush: java;">
 				public class Test1_2_3 {
 					public static void main(String [] args){
 						String a = "HelloWorld";
@@ -120,116 +130,257 @@ a = 10;</pre>
 					}
 				}
 			</pre>
-			このコードを実行してみてください。<br>
-			ちゃんとあっていれば、<b>HelloWorld</b>と表示されるはずです。<br>
-			さっきとは若干違いますよね。<br>
-			さっき変数の宣言は<u><b>int a;</b></u>と言いました。<br>
-			ですが、嘘です。<br>
-			あれはint型の変数の宣言にすぎません。<br>
-			本当は<br>
-			<pre class="mheader">
+	このコードを実行してみてください。<br>
+	ちゃんとあっていれば、<b>HelloWorld</b>と表示されるはずです。<br>
+	さっきとは若干違いますよね。<br>
+	さっき変数の宣言は<u><b>int a;</b></u>と言いました。<br>
+	ですが、嘘です。<br>
+	あれはint型の変数の宣言にすぎません。<br>
+	本当は<br>
+	<pre class="mheader">
 <font color="FF5555">変数の型名</font> 変数名 ;</pre>
-			<pre class="mexplain">
+	<pre class="mexplain">
 変数の型名 : その変数に入れられる値の種類
 変数名 : 変数の名前 </pre>
-			なんです。<br>
-			型名、値の種類って何ぞやって思いましたね？<br>
-			変数にはどんな値でも入れられる物じゃないんです。<br>
-			最初に決められた種類の値しか入れられないんです。<br>
-			例えば、ここには数値しか入りません。って書いてある箱に文字は入れたくありません。<br>
-			つまり、そういうことなんです。<br>
-			変数には、最初に決めた種類のものしか入らないんです。<br>
-			数値なら数値しか、文字なら文字しか入らないんです。<br>
-			では、その種類の指定はどうするのか。<br>
-			それは、名前指定です。<br>
-			型にはすべてに名前があります。<br>
-			その名前を指定して変数を宣言するのです。<br>
-			では、型は何があるのか、表にまとめました。<br>
-			<table border="1" title="プリミティブ型変数型名">
-				<caption>プリミティブ型変数一覧</caption>
-				<tr><th>型名</th><th>種類</th><th>大きさ[bit]</th><th>表記例</th><th>詳細</th><th>ラッパークラス</th></tr>
-				<tr><td>byte</td><td>8ビット符号付整数</td><td>8bit</td><td>byte a = 10;</td><td>-128～127の間の整数</td><td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Byte.html" target="_blank">java.lang.Byte</a></td></tr>
-				<tr><td>short</td><td>16ビット符号付整数</td><td>16bit</td><td>short a = 1000;</td><td>-32768～32767の間の整数</td><td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Short.html" target="_blank">java.lang.Short</a></td></tr>
-				<tr><td>int</td><td>32ビット符号付整数</td><td>32bit</td><td>int a = 186;</td><td>-1247483648～1247483647の間の整数</td><td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Integer.html" target="_blank">java.lang.Integer</a></td></tr>
-				<tr><td>long</td><td>64ビット符号付整数</td><td>64bit</td><td>long a = 1000000000L;</td><td>-9223372036854775808～9223372036854775807の間の整数</td><td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Long.html" target="_blank">java.lang.Long</a></td></tr>
-				<tr><td>float</td><td> 32ビット浮動小数点数</td><td>32bit</td><td>float a = 10.15F;</td><td>負の値は -3.4028235E+38 ～ -1.401298E-45、正の値は 1.401298E-45 ～ 3.4028235E+38 の範囲。少しアバウト</td><td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Float.html" target="_blank">java.lang.Float</a></td></tr>
-				<tr><td>double</td><td>64ビット倍精度浮動小数点数</td><td>64bit</td><td>double a = 10.0115D;</td><td>負の値は -1.79769313486231570E+308 ～ -4.94065645841246544E-324、<br>正の値は 4.94065645841246544E-324 ～ 1.79769313486231570E+308 の範囲。floatよりも正確</td><td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Double.html" target="_blank">java.lang.Double</a></td></tr>
-				<tr><td>boolean</td><td>論理型 true または false</td><td>1bit</td><td>boolean a = true; または boolean a = false;</td><td>正しい(true)か偽り(false)のみ</td><td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Boolean.html" target="_blank">java.lang.Boolean</a></td></tr>
-				<tr><td>char</td><td>文字 16ビット符号なし(Unicode)文字</td><td>16bit</td><td>char a = 'A';</td><td>Unicode文字1文字。</td><td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Character.html" target="_blank">java.lang.Character</a></td></tr>
-				<tr><td>void</td><td>型無し</td><td>0bit</td><td>代入不可</td><td>戻り値が無いことを意味する</td><td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Void.html" target="_blank">java.lang.Void</a></td></tr>
-			</table><br>
-			以上です。<br>
-			え、さっきのStringはどこ行ったのかって？<br>
-			あのこは特別なんです。<br>
-			何が特別なのかはまた今度解説します。<br>
-			まあ、別枠なので、上の表には含めませんでしたが下に書いておきますか。<br>
-			<table border="1"  title="参照値型変数変数(String)">
-				<caption>参照値型変数(String)</caption>
-				<tr><th>型名</th><th>種類</th><th>大きさ[bit]</th><th>表記例</th><th>詳細</th><th>クラス</th></tr>
-				<tr><td>String</td><td>文字列</td><td>大きさに決まり無し</td><td>String a = "文字列";</td><td>文字列</td><td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/String.html" target="_blank">java.lang.String</a></td></tr>
-			</table><br>
-			さあ、よくわからない単語がいくつか出てきましたね。<br>
-			まず<font color="#FF5555"><b><u>プリミティブ型変数</u></b></font>とは何か、からですね。<br>
-			プリミティブ型変数とは、intなどの変数を総省するのですが、<br>
-			今は、どんなもの、ってことはいいです。<br>
-			後で、クラスについて解説するときにまた合わせて説明するので。<br>
-			とりあえず、プリミティブ型変数というのがあって、表の中のものはプリミティブ型変数ということを頭に入れておいてください。<br>
-			で、下の、<font color="#FF5555" ><b><u>参照値型変数</u></b></font>とは何か。<br>
-			これもクラスについて解説するときに合わせて説明します。<br>
-			これも、今はこういうのがあるということだけ頭に(ry<br>
-			で、ほかにも、ビットだとか、ラッパークラスだとかありますが、これも今はスルーで。<br>
-			ビットについては、このページの下に入れておきます。<br>
-			ビットについて知るにはまず2進数についての理解が必要ですが...まあ、そこらへんも含めて解説します。<br>
-			で、<font color="#FF5555">void</font>についても、また別の機会に(メソッドについての時にね)<br>
-			void君だけは、型であって型でない不思議な子なんです。<br>
-			<br>
-			<div style="background: linear-gradient(270deg,rgba(250, 250, 250, 0) ,rgba(250, 250, 0, 0.75) ,rgba(250, 250, 0, 0)); line-height: 50px; height:70px; margin-top: 21px; padding-top: 15px;">
-				<h1 id="j1" style="margin-top: 0px;margin-right: 100px; margin-left: 100px; border-left: 5px solid #F0D000; text-align: left; text-indent: 50pt">リテラルについて</h1>
-			</div>
-			ソースコードに直接記載されてる値( 10 , 334L , 15.5F , 1.41421356D , true , false , '雷' , "あぁ^～心がぴょんぴょんするんじゃぁ^～" など)です。<br>
-			これらの値を総称して、リテラルと言います。<br>
-			ただし、リテラルは後ろにつくLや、D、前後に付く'や"も含みます。<br>
-			それらの文字などは、リテラルのデータ型を決めるものです。<br>
-			どの表記でどのデータ型のリテラルになるのかをまとめてみました。<br>
-			<table>
-				<caption>代表的なリテラル一覧</caption>
-				<tr><th>リテラルの種類</th><th>表記例</th><th>変数型</th><th>コード例</th></tr>
-				<tr><td>整数</td><td>334</td><td>int</td><td>int a = 334;</td></tr>
-				<tr><td>大きい整数。末尾がL(l)</td><td>5548789L</td><td>long</td><td>long a = 5548789L;</td></tr>
-				<tr><td>小数点付き数値(制度は低め)末尾がF(f)</td><td>15.548F</td><td>float</td><td>float a = 15.548F</td></tr>
-				<tr><td>小数点付き数値(制度の高い少数)末尾はD(d) もしくは無し</td><td>3.14159D もしくは 3.14159</td><td>double</td><td>double a = 3.14159;</td></tr>
-				<tr><td>true(真)またはfalse(偽)</td><td>true もしくは false</td><td>boolean</td><td>boolean a = true;</td></tr>
-				<tr><td>引用符(シングルクオーテーション ' )で囲まれた文字</td><td>'雷'</td><td>char</td><td>char a = '雷';</td></tr>
-				<tr><td>二重引用符(ダブルクオーテーション ")で囲まれた文字列</td><td>"あぁ^～心がぴょんぴょんするんじゃぁ^～"</td><td>String</td><td>String a = "あぁ^～心がぴょんぴょんするんじゃぁ^～";</td></tr>
-			</table><br>
-			ですね。<br>
-			特にchreに二重引用符を使ったりして(コンパイル)エラーになることが多いので気を付けてください<br>
-			あと、byteやshort用のリテラルの種類は存在しません。<br>
-			byteやshort等はそのままint用のリテラルが使用可能です。<br>
-			まぁ、結論から言うと<br>
-			<font color="#FF5555">1 と 1L と 1.0F と 1.0 と '1' と "1" は全くの別物ってことです。</font><br>
-			<div class="column">
-				<h1 class="h2">コラム:整数リテラルの応用記法</h1><br>
-				整数リテラルの先頭に <b>0x</b>をつけると16進数。<br>
-				<b>0</b>をつけると8進数<br>
-				<b>0b</b>をつけると2進数表記として解釈されるよ。<br>
-				つまり<br>
-				<pre class="brush: java;">
+	なんです。<br>
+	型名、値の種類って何ぞやって思いましたね？<br>
+	変数にはどんな値でも入れられる物じゃないんです。<br>
+	最初に決められた種類の値しか入れられないんです。<br>
+	例えば、ここには数値しか入りません。って書いてある箱に文字は入れたくありません。<br>
+	つまり、そういうことなんです。<br>
+	変数には、最初に決めた種類のものしか入らないんです。<br>
+	数値なら数値しか、文字なら文字しか入らないんです。<br>
+	では、その種類の指定はどうするのか。<br>
+	それは、名前指定です。<br>
+	型にはすべてに名前があります。<br>
+	その名前を指定して変数を宣言するのです。<br>
+	では、型は何があるのか、表にまとめました。<br>
+	<table border="1" title="プリミティブ型変数型名">
+		<caption>プリミティブ型変数一覧</caption>
+		<tr>
+			<th>型名</th>
+			<th>種類</th>
+			<th>大きさ[bit]</th>
+			<th>表記例</th>
+			<th>詳細</th>
+			<th>ラッパークラス</th>
+		</tr>
+		<tr>
+			<td>byte</td>
+			<td>8ビット符号付整数</td>
+			<td>8bit</td>
+			<td>byte a = 10;</td>
+			<td>-128～127の間の整数</td>
+			<td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Byte.html" target="_blank">java.lang.Byte</a>
+			</td>
+		</tr>
+		<tr>
+			<td>short</td>
+			<td>16ビット符号付整数</td>
+			<td>16bit</td>
+			<td>short a = 1000;</td>
+			<td>-32768～32767の間の整数</td>
+			<td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Short.html" target="_blank">java.lang.Short</a>
+			</td>
+		</tr>
+		<tr>
+			<td>int</td>
+			<td>32ビット符号付整数</td>
+			<td>32bit</td>
+			<td>int a = 186;</td>
+			<td>-1247483648～1247483647の間の整数</td>
+			<td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Integer.html" target="_blank">java.lang.Integer</a>
+			</td>
+		</tr>
+		<tr>
+			<td>long</td>
+			<td>64ビット符号付整数</td>
+			<td>64bit</td>
+			<td>long a = 1000000000L;</td>
+			<td>-9223372036854775808～9223372036854775807の間の整数</td>
+			<td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Long.html" target="_blank">java.lang.Long</a>
+			</td>
+		</tr>
+		<tr>
+			<td>float</td>
+			<td> 32ビット浮動小数点数</td>
+			<td>32bit</td>
+			<td>float a = 10.15F;</td>
+			<td>負の値は -3.4028235E+38 ～ -1.401298E-45、正の値は 1.401298E-45 ～ 3.4028235E+38 の範囲。少しアバウト</td>
+			<td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Float.html" target="_blank">java.lang.Float</a>
+			</td>
+		</tr>
+		<tr>
+			<td>double</td>
+			<td>64ビット倍精度浮動小数点数</td>
+			<td>64bit</td>
+			<td>double a = 10.0115D;</td>
+			<td>負の値は -1.79769313486231570E+308 ～ -4.94065645841246544E-324、<br>正の値は 4.94065645841246544E-324 ～
+				1.79769313486231570E+308 の範囲。floatよりも正確
+			</td>
+			<td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Double.html" target="_blank">java.lang.Double</a>
+			</td>
+		</tr>
+		<tr>
+			<td>boolean</td>
+			<td>論理型 true または false</td>
+			<td>1bit</td>
+			<td>boolean a = true; または boolean a = false;</td>
+			<td>正しい(true)か偽り(false)のみ</td>
+			<td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Boolean.html" target="_blank">java.lang.Boolean</a>
+			</td>
+		</tr>
+		<tr>
+			<td>char</td>
+			<td>文字 16ビット符号なし(Unicode)文字</td>
+			<td>16bit</td>
+			<td>char a = 'A';</td>
+			<td>Unicode文字1文字。</td>
+			<td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Character.html" target="_blank">java.lang.Character</a>
+			</td>
+		</tr>
+		<tr>
+			<td>void</td>
+			<td>型無し</td>
+			<td>0bit</td>
+			<td>代入不可</td>
+			<td>戻り値が無いことを意味する</td>
+			<td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Void.html" target="_blank">java.lang.Void</a>
+			</td>
+		</tr>
+	</table>
+	<br>
+	以上です。<br>
+	え、さっきのStringはどこ行ったのかって？<br>
+	あのこは特別なんです。<br>
+	何が特別なのかはまた今度解説します。<br>
+	まあ、別枠なので、上の表には含めませんでしたが下に書いておきますか。<br>
+	<table border="1" title="参照値型変数変数(String)">
+		<caption>参照値型変数(String)</caption>
+		<tr>
+			<th>型名</th>
+			<th>種類</th>
+			<th>大きさ[bit]</th>
+			<th>表記例</th>
+			<th>詳細</th>
+			<th>クラス</th>
+		</tr>
+		<tr>
+			<td>String</td>
+			<td>文字列</td>
+			<td>大きさに決まり無し</td>
+			<td>String a = "文字列";</td>
+			<td>文字列</td>
+			<td><a href="https://docs.oracle.com/javase/jp/8/docs/api/java/lang/String.html" target="_blank">java.lang.String</a>
+			</td>
+		</tr>
+	</table>
+	<br>
+	さあ、よくわからない単語がいくつか出てきましたね。<br>
+	まず<font color="#FF5555"><b><u>プリミティブ型変数</u></b></font>とは何か、からですね。<br>
+	プリミティブ型変数とは、intなどの変数を総省するのですが、<br>
+	今は、どんなもの、ってことはいいです。<br>
+	後で、クラスについて解説するときにまた合わせて説明するので。<br>
+	とりあえず、プリミティブ型変数というのがあって、表の中のものはプリミティブ型変数ということを頭に入れておいてください。<br>
+	で、下の、<font color="#FF5555"><b><u>参照値型変数</u></b></font>とは何か。<br>
+	これもクラスについて解説するときに合わせて説明します。<br>
+	これも、今はこういうのがあるということだけ頭に(ry<br>
+	で、ほかにも、ビットだとか、ラッパークラスだとかありますが、これも今はスルーで。<br>
+	ビットについては、このページの下に入れておきます。<br>
+	ビットについて知るにはまず2進数についての理解が必要ですが...まあ、そこらへんも含めて解説します。<br>
+	で、<font color="#FF5555">void</font>についても、また別の機会に(メソッドについての時にね)<br>
+	void君だけは、型であって型でない不思議な子なんです。<br>
+	<br>
+	<div style="background: linear-gradient(270deg,rgba(250, 250, 250, 0) ,rgba(250, 250, 0, 0.75) ,rgba(250, 250, 0, 0)); line-height: 50px; height:70px; margin-top: 21px; padding-top: 15px;">
+		<h1 id="j2"
+			style="margin-top: 0px;margin-right: 100px; margin-left: 100px; border-left: 5px solid #F0D000; text-align: left; text-indent: 50pt">
+			リテラルについて</h1>
+	</div>
+	ソースコードに直接記載されてる値( 10 , 334L , 15.5F , 1.41421356D , true , false , '雷' , "あぁ^～心がぴょんぴょんするんじゃぁ^～" など)です。<br>
+	これらの値を総称して、リテラルと言います。<br>
+	ただし、リテラルは後ろにつくLや、D、前後に付く'や"も含みます。<br>
+	それらの文字などは、リテラルのデータ型を決めるものです。<br>
+	どの表記でどのデータ型のリテラルになるのかをまとめてみました。<br>
+	<table>
+		<caption>代表的なリテラル一覧</caption>
+		<tr>
+			<th>リテラルの種類</th>
+			<th>表記例</th>
+			<th>変数型</th>
+			<th>コード例</th>
+		</tr>
+		<tr>
+			<td>整数</td>
+			<td>334</td>
+			<td>int</td>
+			<td>int a = 334;</td>
+		</tr>
+		<tr>
+			<td>大きい整数。末尾がL(l)</td>
+			<td>5548789L</td>
+			<td>long</td>
+			<td>long a = 5548789L;</td>
+		</tr>
+		<tr>
+			<td>小数点付き数値(制度は低め)末尾がF(f)</td>
+			<td>15.548F</td>
+			<td>float</td>
+			<td>float a = 15.548F</td>
+		</tr>
+		<tr>
+			<td>小数点付き数値(制度の高い少数)末尾はD(d) もしくは無し</td>
+			<td>3.14159D もしくは 3.14159</td>
+			<td>double</td>
+			<td>double a = 3.14159;</td>
+		</tr>
+		<tr>
+			<td>true(真)またはfalse(偽)</td>
+			<td>true もしくは false</td>
+			<td>boolean</td>
+			<td>boolean a = true;</td>
+		</tr>
+		<tr>
+			<td>引用符(シングルクオーテーション ' )で囲まれた文字</td>
+			<td>'雷'</td>
+			<td>char</td>
+			<td>char a = '雷';</td>
+		</tr>
+		<tr>
+			<td>二重引用符(ダブルクオーテーション ")で囲まれた文字列</td>
+			<td>"あぁ^～心がぴょんぴょんするんじゃぁ^～"</td>
+			<td>String</td>
+			<td>String a = "あぁ^～心がぴょんぴょんするんじゃぁ^～";</td>
+		</tr>
+	</table>
+	<br>
+	ですね。<br>
+	特にchreに二重引用符を使ったりして(コンパイル)エラーになることが多いので気を付けてください<br>
+	あと、byteやshort用のリテラルの種類は存在しません。<br>
+	byteやshort等はそのままint用のリテラルが使用可能です。<br>
+	まぁ、結論から言うと<br>
+	<font color="#FF5555">1 と 1L と 1.0F と 1.0 と '1' と "1" は全くの別物ってことです。</font><br>
+	<div class="column">
+		<h1 class="h2" id="j3">コラム:整数リテラルの応用記法</h1><br>
+		整数リテラルの先頭に <b>0x</b>をつけると16進数。<br>
+		<b>0</b>をつけると8進数<br>
+		<b>0b</b>をつけると2進数表記として解釈されるよ。<br>
+		つまり<br>
+		<pre class="brush: java;">
 					int a = 0xFFFF; //--aの値は65535
 					int b = 077; //--bの値は63
 					int c = 0b1101; //--cの値は13
 				</pre>
-				となります。
-			また、数値リテラルの中にアンダースコア記号(_)を入れることができます。<br>
-			int a = 1_158_140;<br>
-			日常で1,158,140円みたいにカンマを入れる感じでつけてあげると大きな数値でもわかりやすくなったりします。<br>
-			</div>
-			<br>
-			<br>
-			<hr>
-			<a href="../index.html" style="text-align: center; font-size:35px; text-align: center;">Java解説トップ</a>
-			
-		</main>
-	</body>
+		となります。
+		また、数値リテラルの中にアンダースコア記号(_)を入れることができます。<br>
+		int a = 1_158_140;<br>
+		日常で1,158,140円みたいにカンマを入れる感じでつけてあげると大きな数値でもわかりやすくなったりします。<br>
+	</div>
+	<br>
+	<br>
+	<hr>
+	<a href="../index.html" style="text-align: center; font-size:35px; text-align: center;">Java解説トップ</a>
+
+</main>
+</body>
 
 </html>
