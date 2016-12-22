@@ -19,7 +19,7 @@
 
 <body>
 <main>
-	<a href="../index.html" style="text-align: center; font-size:35px; text-align: center;">Java解説トップ</a><br>
+	<a href="../index.html" style="text-align: center; font-size:35px;">Java解説トップ</a><br>
 	<hr>
 	<br>
 	<br>
@@ -70,21 +70,21 @@ public class Test1_2_1{
 			</pre>
 	<pre class="mexplain">
 この場合、Test1_2_1.java というファイル名にしなくてはいけないんです。
-もっと言えば、<font color="#FF2222">Class Example だった場合ファイル名を Example.javaにしないといけないんです。</font>
+もっと言えば、<span style="color: #FF2222; ">Class Example だった場合ファイル名を Example.javaにしないといけないんです。</span>
 			</pre>
 	<br>
 	<h2 style="color: #FF2222;">これはJava界における絶対のルールなんです。</h2>
 	<br>
 	ですので、守ってください。<br>
-	<font color="#999">本当は例外がありますが、それはクラスについての解説の時に</font><br>
+	<span style="color: #999; ">本当は例外がありますが、それはクラスについての解説の時に</span><br>
 	では、コンパイルして、実行してみてください。<br>
 	実行コードは、コマンドプロンプトで<br>
-	<pre class="mheader"><font color="#AA5555"> javac Test1_2_1.java <br>
-java Test1_2_1</font></pre>
+	<pre class="mheader"><span style="color: #AA5555; "> javac Test1_2_1.java <br>
+java Test1_2_1</span></pre>
 	<br>
 	この二つのコマンドですね。<br>
 	さぁ、なんと表示されたでしょうか。<br>
-	どこも間違ってなければ<font size="15px">10</font>と表示されたはずです。<br>
+	どこも間違ってなければ<span style="font-size: 15px">10</span>と表示されたはずです。<br>
 	さぁ、察しが良い方はもう気づいていると思いますが、確認のため、10を好きな整数に書き換えてみてください。<br>
 	入力された数字が表示されるはずです。<br>
 	そうです。これが変数です<br>
@@ -93,7 +93,7 @@ java Test1_2_1</font></pre>
 	<img src="img/1_1_1.png" alt="変数のイメージ"><br>
 	まぁ、何も言わないでわかりますよね。<br>
 	箱に数字を入れているだけです。<br>
-	<font size="20px">変数は箱です！！</font><br>
+	<span style="font-size: 20px">変数は箱です！！</span><br>
 	で、変数はこんな書き方もできます<br>
 	<pre class="fixcode">
 <span style="color:#FF5555">int</span> a  = 10;
@@ -103,7 +103,7 @@ java Test1_2_1</font></pre>
 	aという名前の付いた変数に10という数字を入れて用意するんです。<br>
 	つまり<br>
 	<pre class="fixcode">
-<font color="#FF5555">int</font> a;
+<span style="color: #FF5555; ">int</span> a;
 a = 10;</pre>
 	を1行に納めただけなんです。<br>
 	つぎ、<br>
@@ -138,7 +138,7 @@ a = 10;</pre>
 	あれはint型の変数の宣言にすぎません。<br>
 	本当は<br>
 	<pre class="mheader">
-<font color="FF5555">変数の型名</font> 変数名 ;</pre>
+<span style="color: FF5555; ">変数の型名</span> 変数名 ;</pre>
 	<pre class="mexplain">
 変数の型名 : その変数に入れられる値の種類
 変数名 : 変数の名前 </pre>
@@ -277,23 +277,23 @@ a = 10;</pre>
 	</table>
 	<br>
 	さあ、よくわからない単語がいくつか出てきましたね。<br>
-	まず<font color="#FF5555"><b><u>プリミティブ型変数</u></b></font>とは何か、からですね。<br>
+	まず<span style="color: #FF5555; "><b><u>プリミティブ型変数</u></b></span>とは何か、からですね。<br>
 	プリミティブ型変数とは、intなどの変数を総省するのですが、<br>
 	今は、どんなもの、ってことはいいです。<br>
 	後で、クラスについて解説するときにまた合わせて説明するので。<br>
 	とりあえず、プリミティブ型変数というのがあって、表の中のものはプリミティブ型変数ということを頭に入れておいてください。<br>
-	で、下の、<font color="#FF5555"><b><u>参照値型変数</u></b></font>とは何か。<br>
+	で、下の、<span style="color: #FF5555; "><b><u>参照値型変数</u></b></span>とは何か。<br>
 	これもクラスについて解説するときに合わせて説明します。<br>
 	これも、今はこういうのがあるということだけ頭に(ry<br>
 	で、ほかにも、ビットだとか、ラッパークラスだとかありますが、これも今はスルーで。<br>
 	ビットについては、このページの下に入れておきます。<br>
 	ビットについて知るにはまず2進数についての理解が必要ですが...まあ、そこらへんも含めて解説します。<br>
-	で、<font color="#FF5555">void</font>についても、また別の機会に(メソッドについての時にね)<br>
+	で、<span style="color: #FF5555; ">void</span>についても、また別の機会に(メソッドについての時にね)<br>
 	void君だけは、型であって型でない不思議な子なんです。<br>
 	<br>
 	<div style="background: linear-gradient(270deg,rgba(250, 250, 250, 0) ,rgba(250, 250, 0, 0.75) ,rgba(250, 250, 0, 0)); line-height: 50px; height:70px; margin-top: 21px; padding-top: 15px;">
 		<h1 id="j2"
-			style="margin-top: 0px;margin-right: 100px; margin-left: 100px; border-left: 5px solid #F0D000; text-align: left; text-indent: 50pt">
+			style="margin-top: 0;margin-right: 100px; margin-left: 100px; border-left: 5px solid #F0D000; text-align: left; text-indent: 50pt">
 			リテラルについて</h1>
 	</div>
 	ソースコードに直接記載されてる値( 10 , 334L , 15.5F , 1.41421356D , true , false , '雷' , "あぁ^～心がぴょんぴょんするんじゃぁ^～" など)です。<br>
@@ -358,7 +358,7 @@ a = 10;</pre>
 	あと、byteやshort用のリテラルの種類は存在しません。<br>
 	byteやshort等はそのままint用のリテラルが使用可能です。<br>
 	まぁ、結論から言うと<br>
-	<font color="#FF5555">1 と 1L と 1.0F と 1.0 と '1' と "1" は全くの別物ってことです。</font><br>
+	<span style="color: #FF5555; ">1 と 1L と 1.0F と 1.0 と '1' と "1" は全くの別物ってことです。</span><br>
 	<div class="column">
 		<h1 class="h2" id="j3">コラム:整数リテラルの応用記法</h1><br>
 		整数リテラルの先頭に <b>0x</b>をつけると16進数。<br>
@@ -376,10 +376,19 @@ a = 10;</pre>
 		日常で1,158,140円みたいにカンマを入れる感じでつけてあげると大きな数値でもわかりやすくなったりします。<br>
 	</div>
 	<br>
+	ちなみに、
+	<pre class="brush: java;">
+			int a = 10;
+			a = 20;
+			System.out.println(a);
+	</pre>
+	この場合20が表示されます。<br>
+	aの中の値を20に上書きしているからです。<br>
 	<br>
 	<hr>
-	<a href="../index.html" style="text-align: center; font-size:35px; text-align: center;">Java解説トップ</a>
-
+	<a href="../index.html" style="text-align: center; font-size:35px;">Java解説トップ</a>
+	<br>
+	<br>
 </main>
 </body>
 
