@@ -1,42 +1,35 @@
 
-
-body{
-	background-image: url("背景.png");
+body {
+	background-image: url("backGroundIMG.png");
 	text-align: center;
 }
 
-main{
+main {
 	background: rgba(190, 255, 255, 0.65);
-	margin-top: 50px;
-	margin-bottom: 100px;
-	padding-top: 30px;
-	padding-left: 50px;
-	padding-right: 50px;
-	padding-bottom: 30px;
+	margin: 50px auto 100px;
+	padding: 30px 50px;
 	border: ridge 5px;
 	border-radius: 50px;
 	text-align: left;
 	line-height: 1.4;
-	overflow:hidden;
+	overflow: hidden;
 	width: 85%;
-	display: none;
 }
 
-img{
-	margin:20px;
+img {
+	margin: 20px;
 	max-width: 90%;
 	height: auto;
 }
 
-.drop{
-	overflow:hidden;
-	border: outset 2px;
+.drop {
+	overflow: hidden;
 	height: 70px;
-	border-color: #AAA;
+	border: 2px outset #AAA;
 	background-color: rgba(255, 255, 255, 0.75);
 }
 
-.droptitle{
+.droptitle {
 	padding: 10px;
 	line-height: 50px;
 	font-size: 30px;
@@ -46,91 +39,91 @@ img{
 	border-bottom: outset 2px #AAA;
 }
 
-.droptitle:hover{
+.droptitle:hover {
 	background-color: rgba(255, 185, 100, 0.75);
 }
 
-.dropcontents{
-	overflow:auto;
-	padding: 10px;
-	padding-top: 0px;
+.dropcontents {
+	overflow: auto;
+	padding: 0 10px 10px;
 	height: auto;
 }
 
-pre.mheader{
+pre.mheader {
 	box-sizing: border-box;
-    font-size: 14px;
-    font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, Meiryo, 'ＭＳ ゴシック', monospace;
-    line-height: 1.5;
-    border: 1px solid #C8C8C8;
-    background-color: #eee8aa;
-    margin: 10px 0 0 0;
-    padding: 5px 10px;
-    width: 100%;
-    overflow: auto;
+	font-size: 14px;
+	font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, Meiryo, 'ＭＳ ゴシック', monospace;
+	line-height: 1.5;
+	border: 1px solid #C8C8C8;
+	background-color: #eee8aa;
+	margin: 10px 0 0 0;
+	padding: 5px 10px;
+	width: 100%;
+	overflow: auto;
 }
 
 pre.mexplain {
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    font-size: 12px;
-    font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, Meiryo, 'ＭＳ ゴシック', monospace;
-    line-height: 1.5;
-    border-bottom: 1px solid #C8C8C8;
-    border-right: 1px solid #C8C8C8;
-    border-left: 1px solid #C8C8C8;
-    background-color: #f5f5dc;
-    margin: 0 0 10px 0;
-    padding: 5px 10px;
-    width: 100%;
-    overflow: auto;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: 12px;
+	font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, Meiryo, 'ＭＳ ゴシック', monospace;
+	line-height: 1.5;
+	border-bottom: 1px solid #C8C8C8;
+	border-right: 1px solid #C8C8C8;
+	border-left: 1px solid #C8C8C8;
+	background-color: #f5f5dc;
+	margin: 0 0 10px 0;
+	padding: 5px 10px;
+	width: 100%;
+	overflow: auto;
 }
 
 pre.fixcode {
 	text-align: left;
-    font-size: 14px;
-    font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, Meiryo, 'ＭＳ ゴシック', monospace;
-    line-height: 1.5;
-    background-color: #f8f8ff;
-    border: 1px solid #dcdcdc;
-    padding: 10px 10px 10px 10px;
-    margin: 10px 0;
-    overflow: auto;
+	font-size: 14px;
+	font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, Meiryo, 'ＭＳ ゴシック', monospace;
+	line-height: 1.5;
+	background-color: #f8f8ff;
+	border: 1px solid #dcdcdc;
+	padding: 10px 10px 10px 10px;
+	margin: 10px 0;
+	overflow: auto;
 }
 
 pre.fixcomment {
-    font-size: 14px;
-    font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, Meiryo, 'ＭＳ ゴシック', monospace;
-    line-height: 1.5;
-    background-color: #fffff0;
-    border: 1px solid #dcdcdc;
-    padding: 10px 20px 10px 15px;
-    margin: 10px 0;
-    overflow: auto;
+	font-size: 14px;
+	font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, Meiryo, 'ＭＳ ゴシック', monospace;
+	line-height: 1.5;
+	background-color: #fffff0;
+	border: 1px solid #dcdcdc;
+	padding: 10px 20px 10px 15px;
+	margin: 10px 0;
+	overflow: auto;
 }
 
-table{
-width: 100%;
-border-collapse: collapse;
-}
-th{
-padding: 6px;
-text-align: left;
-vertical-align: top;
-color: #333;
-background-color: #eee;
-border: 1px solid #b9b9b9;
+table {
+	width: 100%;
+	border-collapse: collapse;
 }
 
-td{
-padding: 6px;
-background-color: #fff;
-border: 1px solid #b9b9b9;
-}
-
-caption{
+th {
 	padding: 6px;
-	border:  1px solid #b9b9b9;
+	text-align: left;
+	vertical-align: top;
+	color: #333;
+	background-color: #eee;
+	border: 1px solid #b9b9b9;
+}
+
+td {
+	padding: 6px;
+	background-color: #fff;
+	border: 1px solid #b9b9b9;
+}
+
+caption {
+	padding: 6px;
+	border: 1px solid #b9b9b9;
 	background: #aaa;
 }
 
@@ -139,6 +132,7 @@ caption{
 	padding: .5em .75em;
 	background-color: #e8e8e8;
 }
+
 .h1::after {
 	content: '';
 	position: absolute;
@@ -152,32 +146,35 @@ caption{
 }
 
 .column {
-    position: relative;
-    padding: 10px;
-    z-index: 10;
-    top: 0;
-    left: 0;
+	position: relative;
+	padding: 10px;
+	z-index: 10;
+	top: 0;
+	left: 0;
 }
+
 .column:before, .column:after {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
 }
+
 .column:before {
-    top: 0;
-    left: 0;
-    z-index: -10;
-    background: #f5f5f5;
+	top: 0;
+	left: 0;
+	z-index: -10;
+	background: #f5f5f5;
 }
+
 .column:after {
-    top: 4px;
-    left: 4px;
-    z-index: -20;
-    background: rgba(0,0,0,0.1);
-    box-shadow: 4px 4px 0 0 rgba(0,0,0,0.2);
-    -moz-box-shadow: 4px 4px 0 0 rgba(0,0,0,0.2);
-    -webkit-box-shadow: 4px 4px 0 0 rgba(0,0,0,0.2);
+	top: 4px;
+	left: 4px;
+	z-index: -20;
+	background: rgba(0, 0, 0, 0.1);
+	box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.2);
 }
 
 .h2 {
@@ -187,6 +184,7 @@ caption{
 	background: linear-gradient(-155deg, rgba(0, 0, 0, 0) 1.5em, #f6aaf6 0%);
 	border-radius: 6px;
 }
+
 .h2::after {
 	position: absolute;
 	top: 0;
