@@ -59,7 +59,6 @@ async function answer_task() {
 				console.log(ans);
 				right.test_info.answer = ans;
 				i++;
-				if (i < ctrl.slides.length) break;
 				ctrl.move_page(1);
 			}
 			break;
