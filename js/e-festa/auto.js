@@ -19,10 +19,10 @@ function auto_run() {
 
 async function select_task() {
 	var list_f = document.list;
-	//for (var i = 0; i < list_f.document.links.length; i++) {
-		window.open("http://deli3.study.jp/home/course/" + list_f.document.links[1].href.split("'")[1]).is_task = true;
+	for (var i = 0; i < list_f.document.links.length; i++) {
+		window.open("http://deli3.study.jp/home/course/" + list_f.document.links[i].href.split("'")[1]).is_task = true;
 		await sleep(5);
-	//}
+	}
 }
 
 
@@ -42,11 +42,13 @@ async function answer_task() {
 			}
 			break;
 		case 2 : //筆記
-			for (var i = ctrl.currPage; i < ctrl.slides.length; i++) {
+			for (var i = ctrl.currPage; i < ctrl.slides.length;) {
 				var ans = ctrl.testInfo[ctrl.currPage].correct.split("\n")[0];
 				console.log(ans);
 				right.test_info.answer = ans;
 				ctrl.move_page(1);
+				i++;
+				if (i < ctrl.slides.length) break;
 				ctrl.move_page(1);
 			}
 			
@@ -56,6 +58,8 @@ async function answer_task() {
 				var ans = ctrl.testInfo[ctrl.currPage].correct.split("\n")[0];
 				console.log(ans);
 				right.test_info.answer = ans;
+				i++;
+				if (i < ctrl.slides.length) break;
 				ctrl.move_page(1);
 			}
 			break;
