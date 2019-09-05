@@ -20,7 +20,12 @@ function select_task() {
 function start() {
 	var kdbox = document.kdbox_iframe;
 	kdbox.__doPostBack('ctl00$masterMain$dkgSubjectTop$hplStart','');
-	answer_task();
+	var old = kdbox.onload;
+	kdbox.onload = function () {
+		kdbox.onload = old;
+		answer_task();
+	}
+	
 }
 
 async function answer_task() {
