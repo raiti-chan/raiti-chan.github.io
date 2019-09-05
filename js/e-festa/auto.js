@@ -7,13 +7,14 @@ function sleep(sec) {
 function auto_run() {
 	if (event.ctrlKey != true) return;
 	alert("start");
-	start();
+	select_task();
 }
 
 function select_task() {
 	var list_f = document.list;
 	for (var i = 0; i < list_f.document.links.length; i++) {
 		list_f.location = list_f.document.links[i].href;
+		start();
 	}
 }
 
@@ -44,8 +45,6 @@ async function answer_task() {
 				ctrl.move_page(1);
 				ctrl.move_page(1);
 			}
-			await sleep(1);
-			kdbox.close();
 			
 			break;
 		case 3 : //四択[ア,イ,ウ,エ]
@@ -55,8 +54,6 @@ async function answer_task() {
 				right.test_info.answer = ans;
 				ctrl.move_page(1);
 			}
-			await sleep(1);
-			kdbox.close();
 			break;
 	}
 	
