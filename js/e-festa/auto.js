@@ -21,7 +21,7 @@ function start() {
 	var kdbox = document.kdbox_iframe;
 	kdbox.__doPostBack('ctl00$masterMain$dkgSubjectTop$hplStart','');
 	answer_task();
-	
+	console.log("a");
 	
 }
 
