@@ -22,7 +22,7 @@ function auto_run() {
 
 async function select_task() {
 	var list_f = document.list;
-	for (var i = 0; i < list_f.document.links.length; i++) {
+	for (var i = 0; i < list_f.document.links.length - 3; i++) {
 		window.open("http://deli3.study.jp/home/course/" + list_f.document.links[i].href.split("'")[1]).is_task = true;
 		await sleep(4);
 		document.list.location.reload();
