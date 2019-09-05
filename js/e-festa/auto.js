@@ -24,7 +24,7 @@ async function select_task() {
 		window.open("http://deli3.study.jp/home/course/" + list_f.document.links[i].href.split("'")[1]).is_task = true;
 		await sleep(3);
 		document.list.location.reload();
-		await sleep(2);
+		await sleep(1);
 	}
 }
 
@@ -68,6 +68,7 @@ async function answer_task() {
 			ctrl.send_log(true);
 			break;
 	}
+	await sleep(1);
 	window.close();
 	
 }
