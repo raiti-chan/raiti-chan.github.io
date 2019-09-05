@@ -3,7 +3,7 @@ if (typeof document.right !== 'undefined') {
 	answer_task();
 } else if (typeof is_task !== 'undefined') {
 	start();
-} else if (is_task == true) {
+} else {
 	document.onkeydown = auto_run;
 }
 
