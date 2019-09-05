@@ -31,7 +31,8 @@ function start() {
 	__doPostBack('ctl00$masterMain$dkgSubjectTop$hplStart','');
 }
 
-function answer_task() {
+async function answer_task() {
+	await sleep(1);
 	var ctrl = document.ctrl;
 	var right = document.right;
 	switch (ctrl.test_type) {
