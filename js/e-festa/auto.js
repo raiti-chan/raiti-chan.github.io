@@ -54,7 +54,7 @@ async function answer_task() {
 			
 			break;
 		case 3 : //四択[ア,イ,ウ,エ]
-			for (var i = ctrl.currPage; i < ctrl.slides.length; i++) {
+			for (var i = ctrl.currPage; i < ctrl.slides.length;) {
 				var ans = ctrl.testInfo[ctrl.currPage].correct.split("\n")[0];
 				console.log(ans);
 				right.test_info.answer = ans;
@@ -63,7 +63,7 @@ async function answer_task() {
 			}
 			break;
 	}
-	window.close();
+	//window.close();
 	
 }
 
