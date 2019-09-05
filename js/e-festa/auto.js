@@ -17,10 +17,15 @@ function select_task() {
 	}
 }
 
-function answer_task() {
+function start() {
 	var kdbox = document.kdbox_iframe;
 	kdbox.__doPostBack('ctl00$masterMain$dkgSubjectTop$hplStart','');
-	//await sleep(2);
+	answer_task();
+}
+
+async function answer_task() {
+	await sleep(2);
+	var kdbox = document.kdbox_iframe;
 	var ctrl = kdbox.document.ctrl;
 	var right = kdbox_iframe.document.right;
 	switch (ctrl.test_type) {
