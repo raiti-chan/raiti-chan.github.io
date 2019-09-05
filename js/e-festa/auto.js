@@ -43,7 +43,7 @@ function answer_task() {
 		case 2 : //筆記
 			for (var i = ctrl.currPage; i < ctrl.slides.length; i++) {
 				var ans = ctrl.testInfo[ctrl.currPage].correct.split("\n")[0];
-				alert(ans);
+				console.log(ans);
 				right.test_info.answer = ans;
 				ctrl.move_page(1);
 				ctrl.move_page(1);
@@ -55,7 +55,7 @@ function answer_task() {
 		case 3 : //四択[ア,イ,ウ,エ]
 		for (var i = ctrl.currPage; i < ctrl.slides.length; i++) {
 			var ans = ctrl.testInfo[ctrl.currPage].correct.split("\n")[0];
-			alert(ans);
+			console.log(ans);
 			right.test_info.answer = ans;
 			ctrl.move_page(1);
 		}
