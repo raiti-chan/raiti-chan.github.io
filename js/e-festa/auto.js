@@ -1,4 +1,4 @@
-document.onkeydown = select_task;
+document.onkeydown = auto_run;
 
 function sleep(wait_ms) {
 	var start_time = new Date();
