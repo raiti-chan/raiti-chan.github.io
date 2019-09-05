@@ -16,22 +16,13 @@ function select_task() {
 	var list_f = document.list;
 	for (var i = 0; i < list_f.document.links.length; i++) {
 		list_f.location = list_f.document.links[i].href;
-		
-	}
-}
-
-function next_process(frame, func) {
-	var old = frame.onload;
-	frame.onload = function (){
-		frame.onload = old;
-		func();
 	}
 }
 
 function answer_task() {
-	
-	
 	var kdbox = document.kdbox_iframe;
+	kdbox.__doPostBack('ctl00$masterMain$dkgSubjectTop$hplStart','');
+	
 	var ctrl = kdbox.document.ctrl;
 	var right = kdbox_iframe.document.right;
 	switch (ctrl.test_type) {
@@ -48,20 +39,18 @@ function answer_task() {
 				ctrl.move_page(1);
 				ctrl.move_page(1);
 			}
-			next_process(kdbox, function() {
-				kdbox.location.href = kdbox.document.getElementById("ctl00_masterMain_dkgTestLogDetail_hplBack").href;
-			})
-			return;
+			kdbox.close();
+			
+			break;
 		case 3 : //四択[ア,イ,ウ,エ]
-		for (var i = ctrl.currPage; i < ctrl.slides.length; i++) {
-			var ans = ctrl.testInfo[ctrl.currPage].correct.split("\n")[0];
-			console.log(ans);
-			right.test_info.answer = ans;
-			ctrl.move_page(1);
-		}
-		kdbox.location.href = kdbox.document.getElementById("ctl00_masterMain_dkgTestLogDetail_hplBack").href;
-		kdbox.kdbox_iframe.close();
-		break;
+			for (var i = ctrl.currPage; i < ctrl.slides.length; i++) {
+				var ans = ctrl.testInfo[ctrl.currPage].correct.split("\n")[0];
+				console.log(ans);
+				right.test_info.answer = ans;
+				ctrl.move_page(1);
+			}
+			kdbox.close();
+			break;
 	}
 	
 }
