@@ -44,6 +44,7 @@ async function answer_task() {
 				ctrl.move_page(1);
 				ctrl.move_page(1);
 			}
+			await sleep(1);
 			kdbox.close();
 			
 			break;
@@ -54,6 +55,7 @@ async function answer_task() {
 				right.test_info.answer = ans;
 				ctrl.move_page(1);
 			}
+			await sleep(1);
 			kdbox.close();
 			break;
 	}
