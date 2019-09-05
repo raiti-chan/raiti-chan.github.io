@@ -43,23 +43,23 @@ function answer_task() {
 			}
 			break;
 		case 2 : //筆記
-			do {
+			for (var i = 0; i < ctrl.slides.length; i++) {
 				var ans = ctrl.testInfo[ctrl.currPage].correct.split("\n")[0];
 				alert(ans);
 				right.test_info.answer = ans;
 				ctrl.move_page(1);
 				ctrl.move_page(1);
-			} while (ctrl.currPage < ctrl.slides.length);
+			}
 			kdbox.location.href = kdbox.document.getElementById("ctl00_masterMain_dkgTestLogDetail_hplBack").href;
 			kdbox.kdbox_iframe.close();
 			break;
 		case 3 : //四択[ア,イ,ウ,エ]
-		do {
+		for (var i = 0; i < ctrl.slides.length; i++) {
 			var ans = ctrl.testInfo[ctrl.currPage].correct.split("\n")[0];
 			alert(ans);
 			right.test_info.answer = ans;
 			ctrl.move_page(1);
-		} while (ctrl.currPage < ctrl.slides.length);
+		}
 		kdbox.location.href = kdbox.document.getElementById("ctl00_masterMain_dkgTestLogDetail_hplBack").href;
 		kdbox.kdbox_iframe.close();
 		break;
