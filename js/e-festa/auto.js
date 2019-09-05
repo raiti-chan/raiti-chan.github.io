@@ -60,6 +60,7 @@ async function answer_task() {
 			}
 			break;
 	}
+	window.close();
 	
 }
 
