@@ -1,8 +1,10 @@
 
-if (typeof is_task === 'undefined') {
-	document.onkeydown = auto_run;
-} else if (is_task == true) {
+if (typeof document.right !== 'undefined') {
+	answer_task();
+} else if (typeof is_task !== 'undefined') {
 	start();
+} else if (is_task == true) {
+	document.onkeydown = auto_run;
 }
 
 function sleep(sec) {
@@ -28,9 +30,8 @@ async function select_task() {
 function start() {
 	__doPostBack('ctl00$masterMain$dkgSubjectTop$hplStart','');
 }
-/*
-async function answer_task() {
-	await sleep(2);
+
+function answer_task() {
 	var ctrl = document.ctrl;
 	var right = document.right;
 	switch (ctrl.test_type) {
@@ -60,8 +61,6 @@ async function answer_task() {
 	}
 	
 }
-
-*/
 
 
 // document.kdbox_iframe.document.ctrl.test_type
