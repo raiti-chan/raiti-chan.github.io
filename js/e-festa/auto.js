@@ -20,11 +20,8 @@ function select_task() {
 function start() {
 	var kdbox = document.kdbox_iframe;
 	kdbox.__doPostBack('ctl00$masterMain$dkgSubjectTop$hplStart','');
-	var old = kdbox.onload;
-	kdbox.onload = function () {
-		kdbox.onload = old;
-		answer_task();
-	}
+	answer_task();
+	
 	
 }
 
