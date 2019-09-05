@@ -3,6 +3,8 @@ if (typeof document.right !== 'undefined') {
 	answer_task();
 } else if (typeof is_task !== 'undefined') {
 	start();
+} else if (document.getElementById("ctl00_masterMain_dkgTestLogDetail_hplBack") != null) {
+	window.close();
 } else {
 	document.onkeydown = auto_run;
 }
@@ -22,9 +24,9 @@ async function select_task() {
 	var list_f = document.list;
 	for (var i = 0; i < list_f.document.links.length; i++) {
 		window.open("http://deli3.study.jp/home/course/" + list_f.document.links[i].href.split("'")[1]).is_task = true;
-		await sleep(3);
+		await sleep(4);
 		document.list.location.reload();
-		await sleep(1);
+		await sleep(2);
 	}
 }
 
@@ -68,8 +70,6 @@ async function answer_task() {
 			ctrl.send_log(true);
 			break;
 	}
-	await sleep(1);
-	window.close();
 	
 }
 
