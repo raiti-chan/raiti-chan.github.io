@@ -14,7 +14,12 @@ function sleep(sec) {
 function auto_run() {
 	if (event.ctrlKey != true) return;
 	if (!confirm("start")) return;
-	select_task();
+	opne_subject();
+}
+
+function opne_subject() {
+	var list_f = document.list;
+	window.open(list_f.locaton).is_subject = true;
 }
 
 async function select_task() {
@@ -22,7 +27,7 @@ async function select_task() {
 	for (var i = 0; i < list_f.document.links.length; i++) {
 		window.open("http://deli3.study.jp/home/course/" + list_f.document.links[i].href.split("'")[1]).is_task = true;
 		await sleep(2);
-		list_f.location.reload();
+		list_f.
 		await sleep(1);
 	}
 }
