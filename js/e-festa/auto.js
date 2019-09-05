@@ -32,10 +32,12 @@ function select_task() {
 
 function wait_load(frame) {
 	var f = true;
+	var old = frame.onload;
 	frame.onload = function (){
 		f = false;
 	}
 	while (f);
+	frame.onload = old;
 }
 
 function answer_task() {
