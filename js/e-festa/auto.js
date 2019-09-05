@@ -10,11 +10,11 @@ function auto_run() {
 	select_task();
 }
 
-function select_task() {
+async function select_task() {
 	var list_f = document.list;
 	for (var i = 0; i < list_f.document.links.length; i++) {
-		list_f.location = list_f.document.links[i].href;
-		setTimeout(start, i * 5000);
+		window.open("http://deli3.study.jp/home/course/" + list_f.document.links[0].href.split("'")[1]);
+		await sleep(5);
 	}
 }
 
