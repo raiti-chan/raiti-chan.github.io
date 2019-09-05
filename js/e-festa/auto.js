@@ -10,16 +10,6 @@ function auto_run() {
 	if (event.ctrlKey != true) return;
 	alert("start");
 	answer_task();
-	//sleep(5000);
-	//var c_f = document.kdbox_iframe.document.ctrl;
-	//var r_f = document.kdbox_iframe.document.right;
-	//var test_size = c_f.testInfo.length;
-	//for (var i = 0; i < test_size; i++) {
-	//	var ans = c_f.testInfo[i].correct.split("\n")[0];
-	//	r_f.test_info.answer = ans;
-	//	c_f.move_page(1);
-	//	c_f.move_page(1);
-	//}
 }
 
 function select_task() {
@@ -30,14 +20,12 @@ function select_task() {
 	}
 }
 
-function wait_load(frame) {
-	var f = true;
+function next_process(frame, func) {
 	var old = frame.onload;
 	frame.onload = function (){
-		f = false;
+		frame.onload = old;
+		func();
 	}
-	while (f);
-	frame.onload = old;
 }
 
 function answer_task() {
@@ -60,10 +48,10 @@ function answer_task() {
 				ctrl.move_page(1);
 				ctrl.move_page(1);
 			}
-			wait_load(kdbox);
-			kdbox.location.href = kdbox.document.getElementById("ctl00_masterMain_dkgTestLogDetail_hplBack").href;
-			kdbox.kdbox_iframe.close();
-			break;
+			next_process(kdbox, function() {
+				kdbox.location.href = kdbox.document.getElementById("ctl00_masterMain_dkgTestLogDetail_hplBack").href;
+			})
+			return;
 		case 3 : //四択[ア,イ,ウ,エ]
 		for (var i = ctrl.currPage; i < ctrl.slides.length; i++) {
 			var ans = ctrl.testInfo[ctrl.currPage].correct.split("\n")[0];
