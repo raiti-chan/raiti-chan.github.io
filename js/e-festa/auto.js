@@ -31,20 +31,27 @@ function select_task() {
 }
 
 function answer_task() {
-	var ctrl = document.kdbox_iframe.document.ctrl;
-	var right = document.kdbox_iframe.document.right;
+	
+	
+	var kbox = document.kdbox_iframe;
+	var ctrl = kdbox.document.ctrl;
+	var right = kdbox_iframe.document.right;
 	switch (ctrl.test_type) {
 		case 1 : //テキスト
-			for (; ctrl.currPage < ctrl.slides.length;) ctrl.move_page(1);
+			do { 
+				ctrl.move_page(1); 
+			} while(ctrl.currPage < ctrl.slides.length - 1);
 			break;
 		case 2 : //筆記
-			for (; ctrl.currPage < ctrl.slides.length;) {
+			do {
 				var ans = ctrl.testInfo[ctrl.currPage].correct.split("\n")[0];
 				alert(ans);
 				right.test_info.answer = ans;
 				ctrl.move_page(1);
 				ctrl.move_page(1);
-			}
+			} while (ctrl.currPage < ctrl.slides.length - 1);
+			kbox.location.href = kbox.document.getElementById("ctl00_masterMain_dkgTestLogDetail_hplBack").href;
+			kbox.kdbox_iframe.close();
 			break;
 	}
 	
