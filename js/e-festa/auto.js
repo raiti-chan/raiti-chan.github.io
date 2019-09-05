@@ -14,18 +14,16 @@ function sleep(sec) {
 function auto_run() {
 	if (event.ctrlKey != true) return;
 	if (!confirm("start")) return;
-	opne_subject();
+	select_task();
 }
 
-function opne_subject() {
-	var list_f = document.list;
-	window.open(list_f.location.href).is_subject = true;
-}
 
 async function select_task() {
 	var list_f = document.list;
 	for (var i = 0; i < list_f.document.links.length; i++) {
 		window.open("http://deli3.study.jp/home/course/" + list_f.document.links[i].href.split("'")[1]).is_task = true;
+		await sleep(3);
+		document.list.locaton.reload();
 		await sleep(2);
 	}
 }
