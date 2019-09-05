@@ -33,7 +33,7 @@ function select_task() {
 function answer_task() {
 	
 	
-	var kbox = document.kdbox_iframe;
+	var kdbox = document.kdbox_iframe;
 	var ctrl = kdbox.document.ctrl;
 	var right = kdbox_iframe.document.right;
 	switch (ctrl.test_type) {
@@ -50,8 +50,8 @@ function answer_task() {
 				ctrl.move_page(1);
 				ctrl.move_page(1);
 			} while (ctrl.currPage < ctrl.slides.length - 1);
-			kbox.location.href = kbox.document.getElementById("ctl00_masterMain_dkgTestLogDetail_hplBack").href;
-			kbox.kdbox_iframe.close();
+			kdbox.location.href = kbox.document.getElementById("ctl00_masterMain_dkgTestLogDetail_hplBack").href;
+			kdbox.kdbox_iframe.close();
 			break;
 	}
 	
