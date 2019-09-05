@@ -9,7 +9,7 @@ function sleep(wait_ms) {
 function auto_run() {
 	if (event.ctrlKey != true) return;
 	alert("start");
-	select_task();
+	answer_task();
 	//sleep(5000);
 	//var c_f = document.kdbox_iframe.document.ctrl;
 	//var r_f = document.kdbox_iframe.document.right;
@@ -25,8 +25,29 @@ function auto_run() {
 function select_task() {
 	var list_f = document.list;
 	for (var i = 0; i < list_f.document.links.length; i++) {
-		//alert(name);
+		list_f.location = list_f.document.links[i].href;
+		
 	}
+}
+
+function answer_task() {
+	var ctrl = document.kdbox_iframe.document.ctrl;
+	var right = document.kdbox_iframe.document.right;
+	switch (ctrl.test_type) {
+		case 1 : //テキスト
+			for (; ctrl.currPage < ctrl.slides.length;) ctrl.move_page(1);
+			break;
+		case 2 : //筆記
+			for (; ctrl.currPage < ctrl.slides.length;) {
+				var ans = ctrl.testInfo[ctrl.currPage].correct.split("\n")[0];
+				alert(ans);
+				right.test_info.answer = ans;
+				ctrl.move_page(1);
+				ctrl.move_page(1);
+			}
+			break;
+	}
+	
 }
 
 
