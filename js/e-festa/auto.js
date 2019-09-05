@@ -18,11 +18,15 @@ function select_task() {
 		list_f.location = list_f.document.links[i].href;
 	}
 }
+function start() {
+	var kdbox = document.kdbox_iframe;
+	kdbox.__doPostBack('ctl00$masterMain$dkgSubjectTop$hplStart','');
+	kdbox.onload = answer_task;
+}
 
 function answer_task() {
 	var kdbox = document.kdbox_iframe;
-	kdbox.__doPostBack('ctl00$masterMain$dkgSubjectTop$hplStart','');
-	
+	kdbox.onload = null;
 	var ctrl = kdbox.document.ctrl;
 	var right = kdbox_iframe.document.right;
 	switch (ctrl.test_type) {
