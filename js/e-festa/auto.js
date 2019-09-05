@@ -1,5 +1,5 @@
 
-if (is_task == undefined) {
+if (typeof is_task === 'undefined') {
 	document.onkeydown = auto_run;
 } else if (is_task == true) {
 	
