@@ -19,7 +19,7 @@ function auto_run() {
 
 function opne_subject() {
 	var list_f = document.list;
-	window.open(list_f.locaton).is_subject = true;
+	window.open(list_f.locaton.href).is_subject = true;
 }
 
 async function select_task() {
