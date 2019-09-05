@@ -1,6 +1,8 @@
 
-if (document.title == "e-FESTA") {
+if (is_task == undefined) {
 	document.onkeydown = auto_run;
+} else if (is_task == true) {
+	
 }
 
 function sleep(sec) {
