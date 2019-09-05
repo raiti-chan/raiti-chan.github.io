@@ -38,9 +38,9 @@ function answer_task() {
 	var right = kdbox_iframe.document.right;
 	switch (ctrl.test_type) {
 		case 1 : //テキスト
-			do { 
-				ctrl.move_page(1); 
-			} while(ctrl.currPage < ctrl.slides.length - 1);
+			for (var i = 0; i < ctrl.slides.length; i++) { 
+				ctrl.move_page(1);
+			}
 			break;
 		case 2 : //筆記
 			do {
@@ -49,10 +49,20 @@ function answer_task() {
 				right.test_info.answer = ans;
 				ctrl.move_page(1);
 				ctrl.move_page(1);
-			} while (ctrl.currPage < ctrl.slides.length - 1);
-			kdbox.location.href = kbox.document.getElementById("ctl00_masterMain_dkgTestLogDetail_hplBack").href;
+			} while (ctrl.currPage < ctrl.slides.length);
+			kdbox.location.href = kdbox.document.getElementById("ctl00_masterMain_dkgTestLogDetail_hplBack").href;
 			kdbox.kdbox_iframe.close();
 			break;
+		case 3 : //四択[ア,イ,ウ,エ]
+		do {
+			var ans = ctrl.testInfo[ctrl.currPage].correct.split("\n")[0];
+			alert(ans);
+			right.test_info.answer = ans;
+			ctrl.move_page(1);
+		} while (ctrl.currPage < ctrl.slides.length);
+		kdbox.location.href = kdbox.document.getElementById("ctl00_masterMain_dkgTestLogDetail_hplBack").href;
+		kdbox.kdbox_iframe.close();
+		break;
 	}
 	
 }
