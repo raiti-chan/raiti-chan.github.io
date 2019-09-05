@@ -25,8 +25,7 @@ function auto_run() {
 function select_task() {
 	var list_f = document.list;
 	for (var i = 0; i < list_f.document.links.length; i++) {
-		var name = list_f.document.links[i].innerText;
-		alert(name);
+		//alert(name);
 	}
 }
 
