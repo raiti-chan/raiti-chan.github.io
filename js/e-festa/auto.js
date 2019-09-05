@@ -1,4 +1,7 @@
-document.onkeydown = auto_run;
+
+if (document.title == "e-FESTA") {
+	document.onkeydown = auto_run;
+}
 
 function sleep(sec) {
 	return new Promise(resolve => setTimeout(resolve, sec*1000));
@@ -6,17 +9,19 @@ function sleep(sec) {
 
 function auto_run() {
 	if (event.ctrlKey != true) return;
-	alert("start");
+	if (!confirm("start")) return;
 	select_task();
 }
 
 async function select_task() {
 	var list_f = document.list;
 	for (var i = 0; i < list_f.document.links.length; i++) {
-		window.open("http://deli3.study.jp/home/course/" + list_f.document.links[0].href.split("'")[1]);
+		window.open("http://deli3.study.jp/home/course/" + list_f.document.links[i].href.split("'")[1]);
 		await sleep(5);
 	}
 }
+
+/*
 
 function start() {
 	var kdbox = document.kdbox_iframe;
@@ -59,6 +64,7 @@ async function answer_task() {
 	
 }
 
+*/
 
 
 // document.kdbox_iframe.document.ctrl.test_type
