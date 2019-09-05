@@ -2,7 +2,7 @@
 if (typeof is_task === 'undefined') {
 	document.onkeydown = auto_run;
 } else if (is_task == true) {
-	
+	start();
 }
 
 function sleep(sec) {
@@ -23,21 +23,16 @@ async function select_task() {
 	//}
 }
 
-/*
+
 
 function start() {
-	var kdbox = document.kdbox_iframe;
-	kdbox.__doPostBack('ctl00$masterMain$dkgSubjectTop$hplStart','');
-	answer_task();
-	console.log("a");
-	
+	__doPostBack('ctl00$masterMain$dkgSubjectTop$hplStart','');
 }
-
+/*
 async function answer_task() {
 	await sleep(2);
-	var kdbox = document.kdbox_iframe;
-	var ctrl = kdbox.document.ctrl;
-	var right = kdbox_iframe.document.right;
+	var ctrl = document.ctrl;
+	var right = document.right;
 	switch (ctrl.test_type) {
 		case 1 : //テキスト
 			for (var i = ctrl.currPage; i < ctrl.slides.length; i++) { 
