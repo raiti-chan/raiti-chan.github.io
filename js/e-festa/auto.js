@@ -19,10 +19,10 @@ function auto_run() {
 
 async function select_task() {
 	var list_f = document.list;
-	//for (var i = 0; i < list_f.document.links.length; i++) {
+	for (var i = 0; i < list_f.document.links.length; i++) {
 		window.open("http://deli3.study.jp/home/course/" + list_f.document.links[1].href.split("'")[1]).is_task = true;
-		await sleep(5);
-	//}
+		await sleep(3);
+	}
 }
 
 
@@ -62,9 +62,10 @@ async function answer_task() {
 				i++;
 				ctrl.move_page(1);
 			}
+			ctrl.send_log(true);
 			break;
 	}
-	//window.close();
+	window.close();
 	
 }
 
