@@ -65,6 +65,7 @@ async function answer_task() {
 			ctrl.send_log(true);
 			break;
 	}
+	await sleep(1);
 	window.close();
 	
 }
