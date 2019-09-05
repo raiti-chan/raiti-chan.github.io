@@ -17,7 +17,7 @@ function select_task() {
 	}
 }
 
-function answer_task() {
+async function answer_task() {
 	var kdbox = document.kdbox_iframe;
 	kdbox.__doPostBack('ctl00$masterMain$dkgSubjectTop$hplStart','');
 	await sleep(2);
