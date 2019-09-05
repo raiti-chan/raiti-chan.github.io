@@ -30,6 +30,14 @@ function select_task() {
 	}
 }
 
+function wait_load(frame) {
+	var f = true;
+	frame.onload = function (){
+		f = false;
+	}
+	while (f);
+}
+
 function answer_task() {
 	
 	
@@ -38,23 +46,24 @@ function answer_task() {
 	var right = kdbox_iframe.document.right;
 	switch (ctrl.test_type) {
 		case 1 : //テキスト
-			for (var i = 0; i < ctrl.slides.length; i++) { 
+			for (var i = ctrl.currPage; i < ctrl.slides.length; i++) { 
 				ctrl.move_page(1);
 			}
 			break;
 		case 2 : //筆記
-			for (var i = 0; i < ctrl.slides.length; i++) {
+			for (var i = ctrl.currPage; i < ctrl.slides.length; i++) {
 				var ans = ctrl.testInfo[ctrl.currPage].correct.split("\n")[0];
 				alert(ans);
 				right.test_info.answer = ans;
 				ctrl.move_page(1);
 				ctrl.move_page(1);
 			}
+			wait_load(kdbox);
 			kdbox.location.href = kdbox.document.getElementById("ctl00_masterMain_dkgTestLogDetail_hplBack").href;
 			kdbox.kdbox_iframe.close();
 			break;
 		case 3 : //四択[ア,イ,ウ,エ]
-		for (var i = 0; i < ctrl.slides.length; i++) {
+		for (var i = ctrl.currPage; i < ctrl.slides.length; i++) {
 			var ans = ctrl.testInfo[ctrl.currPage].correct.split("\n")[0];
 			alert(ans);
 			right.test_info.answer = ans;
