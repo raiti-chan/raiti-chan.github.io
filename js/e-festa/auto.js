@@ -48,9 +48,10 @@ async function answer_task() {
 				right.test_info.answer = ans;
 				ctrl.move_page(1);
 				i++;
-				if (i < ctrl.slides.length) break;
+				if (i >= ctrl.slides.length) break;
 				ctrl.move_page(1);
 			}
+			ctrl.send_log(true);
 			
 			break;
 		case 3 : //四択[ア,イ,ウ,エ]
