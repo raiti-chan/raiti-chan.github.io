@@ -1,15 +1,13 @@
 document.onkeydown = auto_run;
 
-function sleep(wait_ms) {
-	var start_time = new Date();
-	while(new Date - start_time < wait_ms);
-	
+function sleep(sec) {
+	return new Promise(resolve => setTimeout(resolve, sec*1000));
 }
 
 function auto_run() {
 	if (event.ctrlKey != true) return;
 	alert("start");
-	start();
+	answer_task();
 }
 
 function select_task() {
@@ -18,15 +16,11 @@ function select_task() {
 		list_f.location = list_f.document.links[i].href;
 	}
 }
-function start() {
-	var kdbox = document.kdbox_iframe;
-	kdbox.__doPostBack('ctl00$masterMain$dkgSubjectTop$hplStart','');
-	kdbox.onload = answer_task;
-}
 
 function answer_task() {
 	var kdbox = document.kdbox_iframe;
-	kdbox.onload = null;
+	kdbox.__doPostBack('ctl00$masterMain$dkgSubjectTop$hplStart','');
+	sleep(2);
 	var ctrl = kdbox.document.ctrl;
 	var right = kdbox_iframe.document.right;
 	switch (ctrl.test_type) {
