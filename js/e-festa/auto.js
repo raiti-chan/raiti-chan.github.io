@@ -10,10 +10,11 @@ function auto_run() {
 	select_task();
 }
 
-function select_task() {
+async function select_task() {
 	var list_f = document.list;
 	for (var i = 0; i < list_f.document.links.length; i++) {
 		list_f.location = list_f.document.links[i].href;
+		await sleep(1);
 		start();
 	}
 }
