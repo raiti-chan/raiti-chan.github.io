@@ -9,7 +9,7 @@ function sleep(wait_ms) {
 function auto_run() {
 	if (event.ctrlKey != true) return;
 	alert("start");
-	answer_task();
+	start();
 }
 
 function select_task() {
