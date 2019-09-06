@@ -37,7 +37,7 @@ function start() {
 }
 
 async function answer_task() {
-	await sleep(1);
+	await sleep(2);
 	var ctrl = document.ctrl;
 	var right = document.right;
 	ctrl.submitData._startDate.setSeconds(ctrl.submitData._startDate.getSeconds() - (15 * ctrl.slides.length + Math.floor( Math.random() * 100 )));
