@@ -40,7 +40,7 @@ async function answer_task() {
 	await sleep(1);
 	var ctrl = document.ctrl;
 	var right = document.right;
-	ctrl.submitData._startDate.setSeconds(ctrl.submitData._startData.getSeconds() - (30 * ctrl.slides.length));
+	ctrl.submitData._startDate.setSeconds(ctrl.submitData._startDate.getSeconds() - (30 * ctrl.slides.length));
 	switch (ctrl.test_type) {
 		case 1 : //テキスト
 			for (var i = ctrl.currPage; i < ctrl.slides.length; i++) { 
