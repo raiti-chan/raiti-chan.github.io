@@ -2,7 +2,7 @@
   "name": "AnimatorOverrideController Editor",
   "id": "raitichan.com.animator-override-controller-editor",
   "author": "Raitichan",
-  "url": "https://raw.githubusercontent.com/raiti-chan/animator-override-controller-editor/master/vpm.json",
+  "url": "https://raiti-chan.github.io/reps.json",
   "packages": {
     "raitichan.com.animator-override-controller-editor": {
       "0.0.2": {
@@ -13,11 +13,11 @@
         "description": "Support tool to edit the AnimatorOverrideController of the avatar",
         "author": {
           "name": "Raitichan",
-          "email": "",
+          "email": "rusuke@t-net.ne.jp",
           "url": "https://github.com/raiti-chan"
         },
         "url": "https://github.com/raiti-chan/animator-override-controller-editor/releases/download/0.0.2/raitichan.com.animator-override-controller-editor-0.0.2.zip",
-        "repo": "https://raw.githubusercontent.com/raiti-chan/animator-override-controller-editor/master/vpm.json",
+        "repo": "https://raiti-chan.github.io/reps.json",
         "dependencies": {},
         "vpmDependencies": {
           "com.vrchat.avatars": ">=3.1.13"
@@ -31,11 +31,11 @@
         "description": "Support tool to edit the AnimatorOverrideController of the avatar",
         "author": {
           "name": "Raitichan",
-          "email": "",
+          "email": "rusuke@t-net.ne.jp",
           "url": "https://github.com/raiti-chan"
         },
         "url": "https://github.com/raiti-chan/animator-override-controller-editor/releases/download/0.0.1/raitichan.com.animator-override-controller-editor-0.0.1.zip",
-        "repo": "https://raw.githubusercontent.com/raiti-chan/animator-override-controller-editor/master/vpm.json",
+        "repo": "https://raiti-chan.github.io/reps.json",
         "dependencies": {},
         "vpmDependencies": {
           "com.vrchat.avatars": ">=3.1.13"
